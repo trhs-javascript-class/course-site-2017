@@ -1,0 +1,224 @@
+<template>
+  <require from="resources/shared/code-block"></require>
+
+  <h1>Final Project</h1>
+
+  <h2>Assigning Pok&eacute;mon to Tiles</h2>
+
+  <p>Please follow each step completely. Use the other lessons and resources
+  (Mozilla Developer Network) to help you. You may also get help from your
+  classmates. Kevin and Adam will be able to help, so if you get stuck,
+  raise your hand to let them know.</p>
+
+  <h3>What's Next?</h3>
+
+  <p>
+    The next thing we need to do is to figure out which Pok&eacute;mon will be
+    placed on which tiles. To do this, we will write code into the
+    <code>assignPokemonToTiles</code> function in our JavaScript file. But
+    before we do that, we need to talk about our strategy for storing the
+    Pok&eacute;mon information.
+  </p>
+
+  <p>
+    Our tiles are laid out in a two-dimensional fashion (four rows by four
+    columns). However, in order to make things easier for us, our Pok&eacute;mon
+    information will be stored in a one-dimensional list. This basically means
+    we will have 16 Pok&eacute;mon names in one array, and every title will have
+    to know which index to use to match up with its Pok&eacute;mon information.
+  </p>
+
+  <p>
+    First, we will add index information to our tiles in the
+    <code>renderTiles</code> function, so that we can use it later on. Then we
+    will create our list of Pok&eacute;mon.
+  </p>
+  
+  <h3>Step 1</h3>
+
+  <p>
+    Inside <code>renderTiles</code>, we need to make two changes:
+  </p>
+
+  <ul>
+    <li>Add an <code>index</code> variable at the beginning of the function</li>
+    <li>Set the index on each tile as we create it, and increment the index</li>
+  </ul>
+
+  <p>
+    First, let's create our <code>index</code> variable. We will use a
+    <code>let</code> declaration because we will be changing the value as we
+    create our tiles. This declaration should go before anything else in the
+    <code>renderTiles</code> function.
+  </p>
+
+  <h3>Step 2</h3>
+
+  <p>
+    Now that we have created our <code>index</code> variable, we will use it
+    and increment it as we create tiles.
+  </p>
+
+  <p>
+    Inside your <i>inner for loop</i>, after we create the <code>$tile</code>
+    but before we append it to <code>$tileRow</code>, we need to set our index
+    on the tile.
+  </p>
+
+  <p>
+    We can do this setting a <code>data-index</code> attribute on each tile.
+  </p>
+
+  <p>
+    Add these lines between when we create the <code>$tile</code> variable and
+    when we append it to <code>$tileRow</code>:
+  </p>
+  
+  <code-block language="javascript">
+    $tile.attr("data-index", index);
+    index += 1;
+  </code-block>
+
+  <p>
+    Make sure to save all files and refresh your preview to make sure we haven't
+    broken anything.
+  </p>
+
+  <h3>Step 3</h3>
+
+  <p>
+    The next thing we need to do is to come up with a list of our Pok&eacute;mon
+    names. We will have 8 Pok&eacute;, each of which will appear in two
+    different tiles.
+  </p>
+
+  <p>
+    Inside the jQuery function at the very top (above <code>renderTiles</code>),
+    let's declare a variable representing our Pok&eacute;mon names. Since we
+    have to name each Pok&acute;mon twice, the simplest way to do this is to
+    just name them explicitly:
+  </p>
+
+  <code-block language="javascript">
+$(function () {
+  const pokemonNames = [
+    "blastoise", "blastoise",
+    "charizard", "charizard",
+    "dragonite", "dragonite",
+    "gengar", "gengar",
+    "magikarp", "magikarp",
+    "mew", "mew",
+    "pikachu", "pikachu",
+    "venusaur", "venusaur"
+  ];
+
+  // functions such as renderTiles
+});
+  </code-block>
+
+  <h3>Step 4</h3>
+
+  <p>
+    Now that we have our main source of Pok&eacute;mon names, we need to assign
+    those Pok&eacute;mon randomly to our tiles. We will do this in the
+    <code>assignPokemonToTiles</code> function.
+  </p>
+
+  <p>
+    First, let's create another variable, just below pokemonNames. This variable
+    will contain the actual Pok&eacute;mon tile assignments.
+  </p>
+
+  <code-block language="javascript">let pokemonTiles;</code-block>
+
+  <p>
+    Inside <code>assignPokemonToTiles</code>, we will start by creating a copy
+    of the <code>pokemonNames</code> variable and assigning it to
+    <code>pokemonTiles</code>. We use a function called <code>slice()</code> to
+    do that:
+  </p>
+
+  <code-block language="javascript">pokemonTiles = pokemonNames.slice();</code-block>
+
+  <p>
+    Then we need to <i>shuffle</i> the pokemonTiles array. This is where our
+    <code>shuffle</code> function comes in. We will give you the code for
+    shuffling an array:
+  </p>
+  
+  <code-block language="javascript">
+function shuffle(array) {
+    let counter = array.length;
+
+    // While there are elements in the array
+    while (counter > 0) {
+        // Pick a random index
+        let index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+
+    return array;
+}
+  </code-block>
+
+  <p>
+    Then make sure to call <code>shuffle</code> on the <code>pokemonTiles</code>
+    array.
+  </p>
+
+  <p>
+    Your <code>assignPokemonToTiles</code> function should look like this:
+  </p>
+
+  <code-block language="javascript">
+function assignPokemonToTiles() {
+  pokemonTiles = pokemonNames.slice();
+  shuffle(pokemonTiles);
+}
+  </code-block>
+
+  <h3>Step 5</h3>
+
+  <p>
+    Now we need to use <code>.data</code> to ensure that each tile knows what
+    Pok&eacute;mon it holds.
+  </p>
+
+  <p>
+    In order to do this, we will use a <code>for</code> loop and iterate over
+    <code>pokemonTiles</code>. We will use jQuery's <code>.data()</code>
+    function for this. (We could just assign the Pok&eacute;mon names as CSS
+    classes, but that means anyone can use Chrome Developer Tools to cheat!)
+  </p>
+
+  <p>
+    Write a <code>for</code> loop that goes from zero to
+    <code>gridSize * gridSize</code>.
+  </p>
+
+  <p>
+    Inside that loop, we want to look up the tile with the same index. This is
+    done using a selector we haven't covered yet called an attribute selector.
+    Below is what we need to put in the loop:
+  </p>
+
+  <code-block language="javascript">
+    var $tile = $("[data-index=" + i + "]");
+    $tile.data("pokemon", pokemonTiles[i]);
+  </code-block>
+
+  <h3>Step 6</h3>
+
+  <p>
+    Make sure the page still works. When you are done, raise your hand so that
+    Adam or Kevin can check on your work and make sure you're good to start the
+    next section.
+  </p>
+</template>

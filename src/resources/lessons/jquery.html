@@ -1,0 +1,272 @@
+<template>
+  <require from="resources/shared/code-block"></require>
+  
+  <h1>Using jQuery</h1>
+  
+  <h2>Introduction</h2>
+    
+  <p>
+    <b>jQuery</b> is a JavaScript library that we can use to do some cool
+    manipulation of HTML pages.
+  </p>
+  
+  <p>
+    In programming, a <b>library</b> is just code that is written for other
+    programmers&mdash;in other words, code that helps <i>you</i> write code.
+    Libraries are mostly composed of functions (remember those?) that you can
+    call in order to do some useful task.
+  </p>
+  
+  <h3>Why jQuery?</h3>
+  
+  <p>
+    jQuery specializes in manipulating HTML pages. This means we can create or
+    edit content on the fly, perhaps in response to a user interacting with our
+    page in some way.
+  </p>
+  
+  <p>
+    jQuery is very popular and very widely used, so learning jQuery will be very
+    useful if you want to continue writing web applications after you have
+    finished this class.
+  </p>
+  
+  <p>
+    If you wanted to know why the library is written "jQuery", we don't know.
+    Maybe they thought was the cool way to name libraries back in the day.
+  </p>
+  
+  <h2>Using JavaScript Libraries in HTML</h2>
+  
+  <p>
+    Remember how we had to pull in external stylesheets using a special HTML
+    tag? We need to go through a similar process here.
+  </p>
+  
+  <p>
+    To pull in a JavaScript library or script, we need to use the
+    <code>script</code> tag. It takes a <code>src</code> element, which should
+    be a URL pointing to the script in question.
+  </p>
+  
+  <p>
+    Sometimes, a popular library is made available on a <b>content delivery
+    network</b>. (A content delivery network is basically a web service that
+    stores code libraries on servers in a bunch of regions and countries and
+    makes sure that users in those regions get the code library from the nearest
+    server.) jQuery has its own content delivery network, so we can just use it
+    to get a copy of jQuery onto our pages.
+  </p>
+  
+  <p>
+    Here is an example of how to get jQuery onto your HTML page:
+  </p>
+  
+  <code-block language="html">
+&lt;DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="//code.jquery.com/jquery-3.1.0.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <h2>jQuery in Action</h2>
+  
+  <p>
+    So how does jQuery actually work? We've said it allows you to manipulate
+    parts of your HTML document, but how does it do that?
+  </p>
+  
+  <p>
+    jQuery's basic approach is actually similar to how CSS works. Web browsers
+    process CSS rules by using their selectors to find matching elements, and
+    then applying style properties to those elements. jQuery allows you to use
+    selectors in order to select elements, which can then be traversed or
+    modified as needed.
+  </p>
+  
+  <p>
+    Here's an example:
+  </p>
+  
+  <code-block language="javascript">
+$("p")                    // &lt;-- Selects all paragraphs on the page
+  .css("color", "red");   // &lt;-- Turns them red
+  </code-block>
+  
+  <p>
+    As you can see, the example above does two things: selects some elements,
+    and then makes a change. In this case, it changes a CSS style property on
+    each paragraph element.
+  </p>
+  
+  <p>
+    We will now explore some different use cases for manipulating HTML elements
+    with jQuery. Specifically, we will focus on:
+  </p>
+  
+  <ul>
+    <li>Using jQuery as the page loads</li>
+    <li>Using jQuery in response to user interaction</li>
+  </ul>
+  
+  <h3>Using jQuery as the page loads</h3>
+  
+  <p>
+    If you want to manipulate the page as soon as it has finished loading, you
+    can do so by wrapping your code in a jQuery document loaded check. Here is
+    an example of what that looks like:
+  </p>
+  
+  <code-block language="html">
+&lt;DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="//code.jquery.com/jquery-3.1.0.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+    
+    &lt;p&gt;This is another paragraph of text.&lt;/p&gt;
+    
+    &lt;p&gt;This is one last paragraph of text.&lt;/p&gt;
+    
+    &lt;script type="text/javascript"&gt;
+      $(function () {
+        $("p").css("color", "red");
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <p>
+    The most important thing in this example is the use of <code>$</code> right
+    at the beginning of the script block, where we pass in a
+    <code>function</code> declaration which contains our CSS manipulation.
+    The <code>$</code> function, when given a <b>callback function</b> as an
+    argument, will wait until the page is fully loaded and ready to go before
+    executing the code inside the function. This is super important and must
+    always be done before doing any jQuery selectors or manipulation. A good
+    rule of thumb is, every line of jQuery must be wrapped inside a call to the
+    <code>$</code> function.
+  </p>
+  
+  <h3>Using jQuery in response to user interaction</h3>
+  
+  <p>
+    Okay, it's pretty boring to just change all paragraphs at the same time,
+    and we could have just used CSS. Let's make things more interesting. What
+    if we want to leave our paragraphs their normal color, but turn them red if
+    the user clicks on them?
+  </p>
+  
+  <p>
+    Here's how we can do that:
+  </p>
+  
+  <code-block language="html">
+&lt;DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="//code.jquery.com/jquery-3.1.0.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+    
+    &lt;p&gt;This is another paragraph of text.&lt;/p&gt;
+    
+    &lt;p&gt;This is one last paragraph of text.&lt;/p&gt;
+    
+    &lt;script type="text/javascript"&gt;
+      $(function () {
+        $("p").on("click", function () {    // When a paragraph is clicked...
+          $(this).css("color", "red");      // Get the clicked paragraph, set its color to red
+        };
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <h2>Iterating in jQuery</h2>
+  
+  <p>
+    Everything we have seen in jQuery so far has involved manipulating (or
+    creating event handlers for) all elements matched by a jQuery selector.
+    We haven't needed to work with individual matched elements, because we just
+    wanted to turn all of the paragraphs red (or set up a click event handler
+    on all of them). But what if we did need to work with the matched elements?
+  </p>
+  
+  <p>
+    jQuery supports <b>iterating</b> over elements. This means we can use a
+    selector to get some elements, then work on them one at a time.
+  </p>
+  
+  <p>
+    Here's an example, where we will count the number of characters in each
+    paragraph and append that count to the end of each paragraph:
+  </p>
+  
+  <code-block language="html">
+&lt;DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="//code.jquery.com/jquery-3.1.0.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+    
+    &lt;p&gt;This is another paragraph of text.&lt;/p&gt;
+    
+    &lt;p&gt;This is one last paragraph of text.&lt;/p&gt;
+    
+    &lt;script type="text/javascript"&gt;
+      $(function () {
+        $("p").each(function () {                   // For each paragraph...
+          const originalText = $(this).text(),      // Get this paragraph's text,
+            length = originalText.length;           // and the length of that text.
+            
+          // Append " (N characters)" to the end of the paragraph.
+          $(this).text(originalText + " (" + length + " characters)");
+        };
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <h1>Exercises</h1>
+  
+  <ol>
+    <li>
+      Write a jQuery selector call (<code>$(something)</code>) for each of the
+      following cases:
+      <ul>
+        <li>Select all elements with a class of "note".</li>
+        <li>Select the element with the ID of "footer".</li>
+        <li>Select all hyperlinks.</li>
+      </ul>
+    </li>
+    <li>
+      Transform this CSS rule into a jQuery selector and CSS manipulation (be
+      careful about quoting string values):
+      <code-block language="css">.right {
+  text-align: right;
+}
+      </code-block>
+    </li>
+    <li>
+      Run this jQuery snippet: <code>$("p").css("color", "red");</code> on
+      <a href="http://jquery.com">jquery.com</a>. What type of style does this
+      create: inline, embedded, or external? How do you know? (Hint: Look at
+      the HTML source of the page using Chrome developer tools.)
+    </li>
+  </ol>
+  
+</template>

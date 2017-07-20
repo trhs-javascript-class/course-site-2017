@@ -1,0 +1,97 @@
+<template>
+  <require from="resources/shared/code-block"></require>
+
+  <h1>Final Project</h1>
+
+  <h2>Creating our JavaScript file</h2>
+
+  <p>Please follow each step completely. Use the other lessons and resources
+  (Mozilla Developer Network) to help you. You may also get help from your
+  classmates. Kevin and Adam will be able to help, so if you get stuck,
+  raise your hand to let them know.</p>
+
+  <h3>Step 1</h3>
+
+  <p>
+    Create a new folder in your top-level workspace directory called "scripts".
+  </p>
+  
+  <p>
+    Inside that new folder, create a new file called <code>memory.js</code>.
+  </p>
+
+  <h3>Step 2</h3>
+
+  <p>
+    In your <i>index.html</i> file, we will add a <code>&lt;script&gt;</code>
+    tag at the bottom of the <code>&lt;body&gt;</code>.
+  </p>
+  
+  <p>
+    This <code>&lt;script&gt;</code> tag should have a src attribute of
+    <code>scripts/memory.js</code>, and a type attribute of
+    <code>text/javascript</code>.
+  </p>
+
+  <h3>Step 3</h3>
+
+  <p>
+    Inside your <code>memory.js</code> file, perform a jQuery call at the top of
+    your file. This should have an anonymous function within it.
+  </p>
+
+  <p>
+    It should look something like this when you are done:
+  </p>
+
+  <code-block language="javascript">$(function() { });</code-block>
+
+  <h3>Step 4</h3>
+
+  <p>Inside the function you just created, remove the message from the
+  <code>&lt;div&gt;</code> tag with the id of &quot;tiles&quot;. (Remember that
+  you can select an HTML element by ID with <code>$("#id")</code>.)
+  You can use the .empty() call after selecting the <code>&lt;div&gt;</code>
+  tag to do this.</p>
+
+  <p><a href="http://api.jquery.com/empty/">http://api.jquery.com/empty/</a></p>
+
+  <h3>Step 5</h3>
+
+  <p>
+    Now that we know that the JavaScript file is being loaded onto the HTML
+    page, we should create stub functions to help organize our code better.
+  </p>
+
+  <p>
+    Copy the following stub functions into your JavaScript file (inside the
+    <code>$(function () { })</code> function body):
+  </p>
+
+  <code-block language="javascript">
+  function renderTiles() {
+  }
+
+  function shuffle() {
+  }
+
+  function assignPokemonToTiles() {
+  }
+
+  function checkMatch() {
+  }
+
+  function onClickTile() {
+  }
+
+  function reset() {
+  }
+  </code-block>
+
+  <h3>Step 6</h3>
+
+  <p>Using the preview mode in Cloud9, preview your page.</p>
+
+  <p>Once you have finished, please raise your hand so either Kevin or Adam can
+  check your work.</p>
+</template>

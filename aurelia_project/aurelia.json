@@ -29,7 +29,7 @@
     "id": "sass",
     "displayName": "Sass",
     "fileExtension": ".scss",
-    "source": "src/**/*.scss"
+    "source": "src/styles/**/*.scss"
   },
   "editor": {
     "id": "vscode",

@@ -1,0 +1,21 @@
+@import 'foundation';
+
+@include foundation-everything(true);
+
+.content-body {
+  box-shadow: 0 0 10px 1px #dddddd;
+  min-height: 100%;
+
+  .top-bar {
+    margin: {
+      right: -1rem;
+      left: -1rem;
+    };
+  }
+}
+
+.vertical-navigation-column {
+  @include flex-grid-column('expand', 3);
+
+  padding: 0;
+}

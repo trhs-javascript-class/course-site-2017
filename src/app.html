@@ -1,3 +1,11 @@
 <template>
-  <h1>${message}</h1>
+  <require from="styles/app.css"></require>
+  <require from="resources/top-navigation.html"></require>
+
+  <div class="row column content-body">
+    <top-navigation router.bind="router"></top-navigation>
+    <div class="row">
+      <router-view class="column"></router-view>
+    </div>
+  </div>
 </template>

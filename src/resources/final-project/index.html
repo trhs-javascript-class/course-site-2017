@@ -1,0 +1,12 @@
+<template>
+  <require from="resources/shared/vertical-navigation"></require>
+
+  <div class="row">
+    <div class="vertical-navigation-column">
+      <vertical-navigation router.bind="router"></vertical-navigation>
+    </div>
+    <div class="columns medium-9">
+      <router-view></router-view>
+    </div>
+  </div>
+</template>

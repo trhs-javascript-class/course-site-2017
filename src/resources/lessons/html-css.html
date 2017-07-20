@@ -1,0 +1,962 @@
+<template>
+  <require from="resources/shared/code-block"></require>
+  <require from="resources/shared/html-example.html"></require>
+  
+  <h1>HTML &amp; CSS</h1>
+  
+  <h2>Introduction</h2>
+  
+  <p>
+    <b>HTML</b> stands for <i>HyperText Markup Language</i>. Put simply, it is
+    the language we use to write content in web pages.
+  </p>
+  
+  <p>
+    <b>CSS</b> stands for <b>Cascading Style Sheets</b>. We use CSS in order to
+    change the <i>presentation</i> of our content. This ties in very well with
+    HTML, which contains our content and semantic structure; and it complements
+    JavaScript, which is all about how the user interacts with our page.
+  </p>
+  
+  <h2>Structure of HTML</h2>
+  
+  <p>
+    HTML is made up of <b>elements</b>, which are in turn composed of
+    <b>tags</b> and <b>content</b>. A <i>tag</i> is written as one or more words
+    within <i>angle brackets</i>, such as <code>&lt;b&gt;</code> or
+    <code>&lt;a href="http://google.com"&gt;</code>. Tags can enclose
+    <i>content</i>, which may be text or more elements. When a tag has content
+    inside of it, we usually need to write a <i>closing tag</i>, which is
+    similar to the tag that comes before the content, except that it has a
+    leading forward slash.
+  </p>
+  
+  <p>Here are some examples:</p>
+  
+  <code-block language="html">
+&lt;p&gt;This is a paragraph of text. A "p" tag is used to mark a paragraph.&lt;/p&gt;
+
+&lt;b&gt;This is bold text, using a "b" tag.&lt;/b&gt;
+
+&lt;p&gt;Some HTML elements can be used &lt;b&gt;inside&lt;/b&gt; of other elements!&lt;/p&gt;
+  </code-block>
+  
+  <h2>Whitespace in HTML</h2>
+  
+  <p>
+    Whitespace in the text between tags is collapsed:
+  </p>
+  
+  <code-block language="html">
+&lt;p&gt;This paragraph will look the same as the others in a browser.&lt;/p&gt;
+
+&lt;p&gt;This      paragraph      will      look      the      same      as      the      others      in      a      browser.&lt;/p&gt;
+
+&lt;p&gt;
+  This
+  paragraph
+  will
+  look
+  the
+  same
+  as
+  the
+  others
+  in
+  a
+  browser.
+&lt;/p&gt;
+  </code-block>
+  
+  <p>
+    When we have a lot of content inside a tag, it's always a good idea to add
+    some spacing in the HTML file to make it readable.
+  </p>
+  
+  <p>
+    What about in tags themselves? That's a little more complicated. To be safe,
+    just use single spaces inside tags:
+  </p>
+  
+  <code-block language="html">&lt;h1 class=&quot;spacing matters&quot;&gt;Spacing     doesn't    matter here!&lt;/h1&gt;</code-block>
+  
+  <h2>Structure of an HTML Document</h2>
+  
+  <p>
+    HTML documents have the same structure:
+  </p>
+  
+  <code-block language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <h3>Document Type Declaration (<code>&lt;!DOCTYPE html&gt;</code>)</h3>
+  
+  <p>
+    At the top of an HTML document is the <b>document type declaration</b>.
+    This tells a web browser what kind of HTML is being used. This used to be
+    very specific, but it is sufficient to write <code>&lt;!DOCTYPE html&gt;</code>
+    for modern HTML.
+  </p>
+  
+  <h3>Document Head</h3>
+  
+  <p>
+    Below the document type declaration is the <b>document head</b>. Nothing in
+    the document head is visible when a user views the page. The purpose of the
+    document head section is to put in <i>metadata</i> about the page and to
+    reference <i>stylesheets</i> and <i>scripts</i> that the page depends on.
+  </p>
+  
+  <p>
+    The document head is where the <b>document title</b> is specified. The
+    document title usually appears at the top of the browser window, outside of
+    the page itself. We can choose a title using the <code>&lt;title&gt;</code>
+    tag.
+  </p>
+  
+  <p>Example title:</p>
+  
+  <code-block language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Title Goes Here&lt;/title&gt;
+  &lt;/head&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <h3>Document Body</h3>
+  
+  <p>
+    Underneath the document head is the <b>document body</b>. This is where the
+    main content of the page goes. There are a decent number of HTML tags we can
+    use to present our content. Most of them are pretty simple, don't worry.
+  </p>
+  
+  <p>
+    Here is a full example of a simple page:
+  </p>
+  
+  <code-block>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Example Web Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome!&lt;/h1&gt;
+    
+    &lt;p&gt;
+      This is a paragraph on my web page.
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+      Here is another one, with &lt;b&gt;bold&lt;/b&gt; and &lt;i&gt;italic&lt;/i&gt; text.
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <p>
+    Below is how the page would roughly look in a (small) browser:
+  </p>
+  
+  <html-example>
+    <h1>Welcome!</h1>
+    
+    <p>This is a paragraph on my web page.</p>
+    
+    <p>
+      Here is another one, with <b>bold</b> and <i>italic</i> text.
+    </p>
+  </html-example>
+  
+  <h2>Presenting Content</h2>
+  
+  <p>
+    We have already mentioned that <i>paragraphs</i> of text can be represented
+    with the <code>&lt;p&gt;</code> tag. Here are a few other ways to organize
+    text:
+  </p>
+  
+  <ul>
+    <li>Unordered lists</li>
+    <li>Ordered lists</li>
+    <li>Grouped via headers</li>
+  </ul>
+  
+  <h3>Unordered lists</h3>
+  
+  <p>
+    There are three types of lists in HTML: <b>unordered lists</b>,
+    <b>ordered lists</b>, and <b>definition lists</b>. Of these, only the first
+    two are commonly used, so we won't mention definition lists again.
+  </p>
+  
+  <p>
+    <i>Unordered lists</i> are lists where the order of the content is not
+    particularly important. These are represented as <i>bullet lists</i>, such
+    as the one above the beginning of this section.
+  </p>
+  
+  <p>
+    Unordered lists are surrounded by a <code>&lt;ul&gt;</code> opening tag and
+    a <code>&lt;/ul&gt;</code> closing tag. (Think &quot;ul&quot; equals
+    &quot;unordered list&quot;.) Each list item is surrounded by a
+    <code>&lt;li&gt;</code> opening tag and <code>&lt;/li&gt;</code> closing
+    tag.
+  </p>
+  
+  <p>
+    Here is an example:
+  </p>
+  
+  <code-block language="html">
+&lt;p&gt;Key ingredients in apple juice:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apples&lt;/li&gt;
+  &lt;li&gt;Juice&lt;/li&gt;
+  &lt;li&gt;A bunch of preservatives and additives&lt;/li&gt;
+&lt;/ul&gt;
+  </code-block>
+  
+  <h3>Unordered lists</h3>
+  
+  <p>
+    <i>Ordered lists</i>, in contrast, are lists where the order of the content
+    is important. These are represented as <i>numbered lists</i>.
+  </p>
+  
+  <p>
+    Ordered lists are surrounded by a <code>&lt;ol&gt;</code> opening tag and
+    a <code>&lt;/ol&gt;</code> closing tag. (Think &quot;ol&quot; equals
+    &quot;ordered list*quot;.) Each list item is surrounded by a
+    <code>&lt;li&gt;</code> opening tag and <code>&lt;/li&gt;</code> closing
+    tag, just like in unordered lists.
+  </p>
+  
+  <p>
+    Here is an example:
+  </p>
+  
+  <code-block language="html">
+&lt;p&gt;How to make apple juice:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Acquire some apples.&lt;/li&gt;
+  &lt;li&gt;Cut the skin off the apples using a paring knife.&lt;/li&gt;
+  &lt;li&gt;Cut the core out of the apples using a paring knife.&lt;/li&gt;
+  &lt;li&gt;Put the apple slices into a food processor.&lt;/li&gt;
+  &lt;li&gt;Add juice.&lt;/li&gt;
+  &lt;li&gt;Add additives and preservatives.&lt;/li&gt;
+&lt;/ol&gt;
+  </code-block>
+  
+  <p>
+    <b><i>Disclaimer:</i></b> This is not a cooking class and we make no
+    representation of the accuracy of any cooking suggestions.
+  </p>
+  
+  <h3>Headers</h3>
+  
+  <p>
+    There are six different header tags, each representing a different level
+    of heading for your content:
+  </p>
+  
+  <ul>
+    <li><code>&lt;h1&gt;&lt;/h1&gt;</code></li>
+    <li><code>&lt;h2&gt;&lt;/h2&gt;</code></li>
+    <li><code>&lt;h3&gt;&lt;/h3&gt;</code></li>
+    <li><code>&lt;h4&gt;&lt;/h4&gt;</code></li>
+    <li><code>&lt;h5&gt;&lt;/h5&gt;</code></li>
+    <li><code>&lt;h6&gt;&lt;/h6&gt;</code></li>
+  </ul>
+  
+  <p>
+    Higher header numbers mean levels of subheading/nesting. In other words,
+    <code>&lt;h1&gt;</code> is biggest and <code>&lt;h6&gt;</code> is smallest.
+  </p>
+  
+  <p>
+    You can use headers to intelligently group text together, and even to put
+    groups in a larger group. In fact, we are using <code>&lt;h1&gt;</code>
+    through <code>&lt;h3&gt;</code> on this page to group all of the content
+    together!
+  </p>
+  
+  <p>
+    Here is an example of how you can use headers to group content:
+  </p>
+  
+  <code-block language="html">
+&lt;DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;All About Apple Juice
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;h1&gt;Everything I Know About Apple Juice&lt;/h1&gt;
+    
+    &lt;h2&gt;Ingredients&lt;/h2&gt;
+    
+    &lt;p&gt;Key ingredients in apple juice:&lt;/p&gt;
+    
+    &lt;ul&gt;
+      &lt;li&gt;Apples&lt;/li&gt;
+      &lt;li&gt;Juice&lt;/li&gt;
+      &lt;li&gt;A bunch of preservatives and additives&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Making Apple Juice&lt;/h2&gt;
+    
+    &lt;p&gt;How to make apple juice:&lt;/p&gt;
+    
+    &lt;ol&gt;
+      &lt;li&gt;Acquire some apples.&lt;/li&gt;
+      &lt;li&gt;Cut the skin off the apples using a paring knife.&lt;/li&gt;
+      &lt;li&gt;Cut the core out of the apples using a paring knife.&lt;/li&gt;
+      &lt;li&gt;Put the apple slices into a food processor.&lt;/li&gt;
+      &lt;li&gt;Add juice.&lt;/li&gt;
+      &lt;li&gt;Add additives and preservatives.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <p>
+    Which would look something like this in a browser:
+  </p>
+  
+  <html-example>
+    <h1>Everything I Know About Apple Juice</h1>
+    
+    <h2>Ingredients</h2>
+    
+    <p>Key ingredients in apple juice:</p>
+    
+    <ul>
+      <li>Apples</li>
+      <li>Juice</li>
+      <li>A bunch of preservatives and additives</li>
+    </ul>
+    
+    <h2>Making Apple Juice</h2>
+    
+    <p>How to make apple juice:</p>
+    
+    <ol>
+      <li>Acquire some apples.</li>
+      <li>Cut the skin off the apples using a paring knife.</li>
+      <li>Cut the core out of the apples using a paring knife.</li>
+      <li>Put the apple slices into a food processor.</li>
+      <li>Add juice.</li>
+      <li>Add additives and preservatives.</li>
+    </ol>
+  </html-example>
+  
+  <h2>Emphasizing Content</h2>
+  
+  <p>
+    We have already seen two tags for emphasizing content: the
+    <code>&lt;b&gt;</code> (bold) tag, and the <code>&lt;i&gt;</code> (italic)
+    tag. Just like in a word processor, bold text is darker and thicker, and
+    italic text is artfully sloped.
+  </p>
+  
+  <p>
+    You can also write underlined text using a <code>&lt;u&gt;</code> tag.
+    However, underlined text is very uncommon on the Web. In general, unless you
+    are following a style guide which requires underlining certain things, you
+    can just use bold and italic text.
+  </p>
+  
+  <p>
+    For all three of these tags, simply use them around text that needs to be
+    emphasized. This works in paragraphs and lists, as well as pretty much
+    anywhere else. See below:
+  </p>
+  
+  <code-block language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Emphasizing text&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+      This paragraph has &lt;b&gt;bold&lt;/b&gt; text.
+      This paragraph also has &lt;i&gt;italic&lt;/i&gt; text.
+    &lt;/p&gt;
+    
+    &lt;ul&gt;
+      &lt;li&gt;Something &lt;b&gt;important.&lt;b&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;i&gt;Another&lt;/i&gt; important thing.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <p>
+    <i><b>Warning:</b></i> It might be tempting to use bold or italic text on
+    entire paragraphs to make them stand out. If we can't convince you that
+    "less is more" when it comes to content emphasis, at least let us convince
+    you not to use the tags. <i>Cascading style sheets</i>, which we will cover
+    very soon, are much more efficient for that task.
+  </p>
+  
+  <h2>Linking to Different Pages</h2>
+  
+  <p>
+    Everything we have done so far has helped us write content onto a single
+    page. While there is nothing stopping you from writing your autobiography
+    onto a single web page, it's a much better idea to separate your content
+    into multiple pages. That way, you can control how you want to present each
+    page, and you can even make suggestions to your users about what content to
+    view next, but your users have the freedom to browse your content in the
+    way that makes the most sense to them.
+  </p>
+  
+  <p>
+    That's beautiful and all, but there's no point in separating your content
+    into different pages if your users can't jump between those pages. Enter
+    <b>hyperlinks</b>, or <b>links</b> for short. HTML's greatest strength is
+    its ability to seamlessly link content pages together. This is primary done
+    using the <b>anchor tag</b> (<code>&lt;a&gt;</code>).
+  </p>
+  
+  <p>
+    Let's start with an example:
+    <code>&lt;a href="http://google.com"&gt;Google!&lt;/a&gt;</code>
+  </p>
+  
+  <p>
+    The first thing you might have noticed is the extra stuff in the opening
+    <code>&lt;a&gt;</code> tag. That is an <b>attribute</b>, which is used for
+    giving web browsers extra information about the element without showing it
+    directly to the user. One thing to note about attributes is that they never
+    are used in a closing tag, only in an opening tag.
+  </p>
+  
+  <p>
+    In this case, the <i>href attribute</i> tells a web browser what page it
+    should show the user next if the user clicks on the hyperlink. The
+    <i>text</i> of a hyperlink is completely irrelevant in determining the
+    page the user sees when he or she clicks on the link.
+  </p>
+  
+  <p>
+    For example, the link below will <i>not</i> take the user to the Trustworthy
+    Bank:
+  </p>
+  
+  <code-block language="html">
+&lt;a href="http://fraudsters.com"&gt;My Trustworthy Bank Account&lt;/a&gt;
+  </code-block>
+  
+  <p>
+    Building hyperlinks that go to unexpected websites is one of the more basic
+    techniques cyber-criminals use to try to trick people into sharing private
+    information. Make sure your friends and family know to hover over links and
+    read the web address in the corner of the browser before clicking!
+  </p>
+  
+  <h3>Pointing to Different Pages</h3>
+  
+  <p>
+    We've seen that the <i>href attribute</i> of an <i>anchor tag</i> is how we
+    direct users to other pages. But how can we specify those pages? The answer
+    is we use one of three different kinds of <b>URLs</b> (uniform resource
+    locators):
+  </p>
+  
+  <ul>
+    <li>
+      An <b>absolute URL</b> is a long URL that includes the <i>hostname</i>
+      for a site, as well as the full <i>path</i> to the desired page or
+      resource. (Example: <code>http://github.com/platinumazure</code>)
+    </li>
+    <li>
+      A <b>virtual URL</b> is a URL that begins with a forward slash. Virtual
+      URLs resolve to a URL on the same <i>hostname</i>, but replace the entire
+      <i>path</i>. For example, if you are currently visiting
+      <code>https://github.com/weegeekps</code>, a link with href of
+      <code>/platinumazure</code> would take you to the
+      <code>https://github.com/platinumazure</code> page.
+    </li>
+    <li>
+      A <b>relative URL</b> is a URL that is interpreted as <i>relative to</i>
+      the current page.
+    </li>
+  </ul>
+      
+  <p>
+    There are a few different flavors of relative URLs:
+  </p>
+  
+  <ul>
+    <li>
+      <code>../../some/other/path</code>: Go "up" two levels of the path
+      (remove the two rightmost path segments), then add the some/other/path
+      segments. <code>http://example.com/foo/bar</code> becomes
+      <code>http://example.com/some/other/path</code>.
+    </li>
+    <li>
+      <code>./somePage.html</code>: Look for "somePage.html" with the same
+      path segments as the current page (up to the last segment).
+      <code>http://example.com/foo/bar.html</code> becomes
+      <code>http://example.com/foo/somePage.html</code>.
+    </li>
+    <li>
+      <code>somePage.html</code> (with no dots or slashes prefixing): This
+      is the same as <code>./somePage.html</code>, in that it uses the path
+      segments of your current page except the last segment.
+    </li>
+  </ul>
+  
+  <p>
+    Which type is the correct one to use? Well, that depends on the situation.
+    An <i>external link</i>, which is a hyperlink going to a different website,
+    must use an absolute URL. When you don't want to use an absolute URL, either
+    a virtual URL or a relative URL will work just fine (and in general, as long
+    as you don't move your website to a different hostname, it is possible to
+    convert between virtual and relative URLs interchangeably).
+  </p>
+  
+  <h2>Images</h2>
+  
+  <p>
+    We can render images on our web pages using the <code>&lt;img&gt;</code>
+    tag. The <code>&lt;img&gt;</code> tag requires a <code>src</code> attribute
+    (meaning source). The value of the <code>src</code> attribute is a URL,
+    meaning any of the URL types we just learned about will work here.
+  </p>
+  
+  <p>
+    Here is an example:
+  </p>
+  
+  <code-block language="html">
+&lt;img src="http://imgur.com/download/GthfGaz" /&gt;
+  </code-block>
+  
+  <p>
+    Which looks something like this:
+  </p>
+  
+  <p>
+    <img src="http://imgur.com/download/GthfGaz" />
+  </p>
+  
+  <h2>Using CSS to Style Your Content</h2>
+  
+  <p>
+    Before we talk about how to actually style our pages through CSS, we need to
+    talk about where we can use styles.
+  </p>
+  
+  <p>
+    There are three types of styles:
+  </p>
+  
+  <ul>
+    <li>Inline styles</li>
+    <li>Embedded styles</li>
+    <li>External styles</li>
+  </ul>
+  
+  <h3>Inline Styles</h3>
+  
+  <p>
+    <b>Inline styles</b> are styles that are applied directly to HTML elements.
+    We can use the <code>style</code> attribute on any element to style just
+    that element.
+  </p>
+  
+  <p>
+    Here's an example of an inline style:
+  </p>
+  
+  <code-block language="html">
+&lt;p style="color: red"&gt;The text in this paragraph is red.&lt;/p&gt;
+  </code-block>
+  
+  <h3>Embedded Styles</h3>
+  
+  <p>
+    If you want all of your paragraphs to have red text, you can see that it
+    will get really frustrating really quickly to use inline styles on all
+    paragraphs. Wouldn't it be great if we could just say that all paragraphs
+    should be red? <b>Embedded styles</b> allow you to do just that.
+  </p>
+  
+  <p>
+    Embedded styles are put onto the page using a <code>&lt;style&gt;</code>
+    tag. We use a <code>type</code> attribute in the <code>&lt;style&gt;</code>
+    tag to tell the browser we are using CSS. Then we can write our styles in
+    the form of <i>CSS rules</i>.
+  </p>
+  
+  <p>
+    Here is an example of a CSS rule in an embedded style sheet:
+  </p>
+  
+  <code-block language="html">
+&lt;DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      p {
+        color: red;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;p&gt;
+      Wow! This paragraph will have red text, without having to write a color
+      inside the HTML.
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+      And so will this paragraph!
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+      And this one!
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <h3>External Styles</h3>
+  
+  <p>
+    Embedded style sheets do a great job of providing a consistent set of styles
+    across a page. When you want to use the same styles across an entire
+    website, though, <b>external styles</b> are the way to go.
+  </p>
+  
+  <p>
+    External styles are very similar to embedded styles. The only difference is
+    where the style rules are located. For external styles, we write our style
+    rules in a <code>.css</code> file and then pull the file into our pages
+    using a <code>&lt;link&gt;</code> tag. (Be careful: We use the &lt;a&gt;
+    or <i>anchor</i> tag for creating hyperlinks. The <code>&lt;link&gt;</code>
+    tag is for pulling two resources together&mdash;in this case, an HTML
+    document and an external CSS file.)
+  </p>
+  
+  <p>
+    Here is how the above example would look using external styles:
+  </p>
+  
+  <code-block language="css">
+/* This is the CSS file. (This line is a comment, which doesn't do anything.) */
+
+p {
+  color: red;
+}
+  </code-block>
+  
+  <code-block language="html">
+&lt;DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" href="myStyles.css" type="text/css" /&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;p&gt;
+      Wow! This paragraph will have red text, without having to write a color
+      inside the HTML.
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+      And so will this paragraph!
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+      And this one!
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <p>
+    Most of the time, external styles are the best way to do things. CSS files
+    can be pulled in easily from HTML pages, and they help ensure consistent
+    styles across your website.
+  </p>
+  
+  <h2>Anatomy of a CSS Rule</h2>
+  
+  <p>
+    As we mentioned earlier, styles are expressed in terms of <b>CSS rules</b>.
+  </p>
+  
+  <p>
+    A CSS rule has two parts. First is the <b>selector</b>, which describes the
+    elements to which the styles will be applied. After the selector comes the
+    <b>properties</b>, which are actual styles that will be applied to elements
+    that match the rule's selector. Properties are surrounded by curly braces.
+    Each property is composed of a name and a value, separated by a colon.
+    Each property is terminated by a semicolon.
+  </p>
+  
+  <h3>Selectors</h3>
+  
+  <p>
+    There are many different types of selectors. In this class, we will show
+    only three types of selectors to keep things simple. We guarantee that these
+    three types of selectors will cover 85% or more of all situations you will
+    encounter as a web developer.
+  </p>
+  
+  <p>
+    Here are the three types of selectors we will focus on:
+  </p>
+  
+  <ul>
+    <li>Tag selectors</li>
+    <li>Class selectors</li>
+    <li>ID selectors</li>
+  </ul>
+  
+  <h4>Tag selectors</h4>
+  
+  <p>
+    <b>Tag selectors</b> are selectors that match elements by their tag name.
+    We saw a tag selector in a recent example: <code>p</code>. This selector
+    matches all elements that have <i>p</i> as their tag name: in other words,
+    paragraph tags.
+  </p>
+  
+  <p>
+    Rules with tag selectors are useful when you want to apply styles to many
+    elements with the same HTML tag. In addition, you can apply styles to the
+    <code>&lt;body&gt;</code> tag in order to apply styles to the entire page.
+  </p>
+  
+  <h4>Class selectors</h4>
+  
+  <p>
+    <b>Class selectors</b> are selectors that match elements by their class
+    name. But wait, what is a class name?
+  </p>
+  
+  <p>
+    A <b>class name</b> is an attribute we can assign to any HTML element. We
+    can use class names in order to classify HTML elements (possibly with
+    different tag names) as needing the same styles applied.
+  </p>
+  
+  <p>
+    We can use almost any string as a class name (as long as it doesn't have a
+    space in it). We can use hyphens to create a class name with multiple words.
+  </p>
+  
+  <p>
+    Some example classes:
+  </p>
+  
+  <ul>
+    <li><code>red</code></li>
+    <li><code>important-info</code></li>
+  </ul>
+  
+  <p>
+    Classes are specified using the <code>class</code> attribute on any element:
+  </p>
+  
+  <code-block language="html">
+&lt;p class="my-class"&gt;This paragraph has class.&lt;/p&gt;
+  </code-block>
+  
+  <p>
+    Class names don't do anything by themselves. If all you do is put a class
+    attribute on every element in your HTML, nothing will look any different.
+    The real power of classes comes from using classes in CSS rules.
+  </p>
+  
+  <p>
+    Here is an example of a rule that uses a class selector:
+  </p>
+  
+  <code-block language="css">
+.red {
+  color: red;
+}
+  </code-block>
+  
+  <p>
+    A class selector starts with a <code>.</code> (period), and that is followed
+    by the name of the class you want to trigger this style rule. Any style
+    properties declared in the rule will be applied to all elements with a
+    matching class name.
+  </p>
+  
+  <p>
+    By the way, HTML elements can have more than once class name. Multiple
+    class names are separated with spaces:
+  </p>
+  
+  <code-block language="html">
+&lt;p class="red bold"&gt;A paragraph.&lt;/p&gt;
+  </code-block>
+  
+  <p>
+    When an element has multiple class names, it will be affected by rules
+    that mention only one or some of its classes. For example, a rule with a
+    <code>.red</code> selector will be applied to the paragraph above, and so
+    will a rule with a <code>.bold</code> selector. Therefore, you should use
+    multiple classes with simple style meanings ("red" and "bold" individually)
+    rather than one class with a more complex style meaning ("redbold" which
+    means both). That way, you can just use both classes, like we did above.
+  </p>
+  
+  <h4>ID selectors</h4>
+  
+  <p>
+    <b>ID selectors</b> are similar to class selectors. Elements can be given an
+    ID using the <code>id</code> attribute. The major difference between an ID
+    and a class name is that an element can only have one ID&mdash;and also, no
+    two HTML elements can have the same ID on the same page.
+  </p>
+  
+  <p>
+    Here is an example of an element with an ID:
+  </p>
+  
+  <code-block language="html">
+&lt;p id="some-id"&gt;My paragraph with an identity&lt;/p&gt;
+  </code-block>
+  
+  <p>
+    And here is an example of a style rule using an ID selector:
+  </p>
+  
+  <code-block language="css">
+#some-id {
+  color: red;
+}
+  </code-block>
+  
+  <p>
+    An ID selector starts with a <code>#</code> (<s>hashtag</s> hash symbol),
+    and that is followed by the name of the class you want to trigger this style
+    rule. Any style properties declared in the rule will be applied to the one
+    element with the ID used in the rule.
+  </p>
+  
+  <h3>Properties</h3>
+  
+  <p>
+    In a CSS rule, <b>properties</b> are how we describe the actual styles we
+    want to apply to a set of elements matched by a selector.
+  </p>
+  
+  <p>
+    There are a lot of properties, and unfortunately we don't have time to teach
+    even one tenth of them. But we will give you three highly useful properties.
+    If you want to learn more, you can go to our Resources page and bookmark
+    the links in the CSS section.
+  </p>
+  
+  <h4>Text Color</h4>
+  
+  <p>
+    You can set the text color for elements matched by a selector using the
+    <code>color</code> property, such as <code>color: red;</code>.
+  </p>
+  
+  <p>
+    There are a few ways to represent colors in CSS. Many colors can be named
+    (such as red), see the Resources page for more details.
+  </p>
+  
+  <p>
+    You can also use a <b>rgb representation</b> if you want to fine-tune your
+    colors, by representing the color using its red, green, and blue components.
+    Each component can be a value between 0 and 255. Here is an example for
+    dark gray:
+  </p>
+  
+  <code-block language="css">
+p {
+  color: rgb(64, 64, 64);
+}
+  </code-block>
+  
+  <h4>Background Color</h4>
+  
+  <p>
+    You can set the background color for elements matched by a selector using
+    the <code>background-color</code> property, such as
+    <code>background-color: black;</code>. Background colors can be represented
+    the same way as text colors.
+  </p>
+  
+  <h4>Text alignment</h4>
+  
+  <p>
+    You can set the horizontal alignment of text in elements matched by a
+    selector using the <code>text-align</code> property, such as
+    <code>text-align: right;</code>. For this property, you can use
+    <code>left</code>, <code>center</code>, or <code>right</code> as values.
+  </p>
+  
+  <p>
+    Here is an example:
+  </p>
+  
+  <code-block language="css">
+.right {
+  text-align: right;
+}
+  </code-block>
+  
+  <h1>Exercises</h1>
+  
+  <ol>
+    <li>
+      Create a complete HTML file with the following:
+      <ul>
+        <li>Page title of "My Favorite Music"</li>
+        <li>Header (<code>&lt;h1&gt;</code>) with "My Favorite Music"</li>
+        <li>
+          An introductory paragraph saying something like, "These are my top 3
+          favorite songs:"
+        </li>
+        <li>
+          An ordered list of three items, where each item contains a song name
+          and an artist name (representing a favorite song of yours)
+        </li>
+      </ul>
+    </li>
+    
+    <li>
+      Modify the My Favorite Music exercise so that song titles are in
+      <i>italics</i>.
+    </li>
+    
+    <li>
+      Wiz Khalifa has hired <i>you</i> to turn his website black and yellow.
+      Specifically, he wants his whole website to have a black background and
+      yellow text. Write a CSS rule that would accomplish this.
+    </li>
+  </ol>
+  
+</template>

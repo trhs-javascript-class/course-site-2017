@@ -1,3 +1,4 @@
+//import 'jquery';
 import environment from './environment';
 
 export function configure(aurelia) {
