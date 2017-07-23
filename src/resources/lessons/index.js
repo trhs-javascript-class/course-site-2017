@@ -27,10 +27,10 @@ export class LessonsIndex {
       title: '4. Functions',
       nav: true
     }, {
-      route: 'html-css',
-      name: 'html-css',
-      moduleId: 'resources/lessons/html-css',
-      title: '5. HTML & CSS',
+      route: 'html-basics',
+      name: 'html-basics',
+      moduleId: 'resources/lessons/html-basics',
+      title: '5. HTML Basics',
       nav: true
     }, {
       route: 'jquery',
