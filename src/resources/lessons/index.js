@@ -39,16 +39,22 @@ export class LessonsIndex {
       title: '6. More HTML',
       nav: true
     }, {
+      route: 'css-and-selectors',
+      name: 'css-and-selectors',
+      moduleId: 'resources/lessons/css-and-selectors',
+      title: '7. CSS and Selectors',
+      nav: true
+    }, {
       route: 'jquery',
       name: 'jquery',
       moduleId: 'resources/lessons/jquery',
-      title: '7. Using jQuery',
+      title: '8. Using jQuery',
       nav: true
     }, {
       route: 'clock-project',
       name: 'clock-project',
       moduleId: 'resources/lessons/clock-project',
-      title: '8. Clock Project',
+      title: '9. Clock Project',
       nav: true
     }]);
   }
