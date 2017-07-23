@@ -3,6 +3,186 @@
   <require from="resources/shared/html-example.html"></require>
 
   <h1>More HTML</h1>
+  
+  <h2>Organizing Content</h2>
+  
+  <p>
+    We have already mentioned that <i>paragraphs</i> of text can be represented
+    with the <code>&lt;p&gt;</code> tag. Here are a few other ways to organize
+    text:
+  </p>
+  
+  <ul>
+    <li>Unordered lists</li>
+    <li>Ordered lists</li>
+    <li>Grouped via headers</li>
+  </ul>
+  
+  <h3>Unordered lists</h3>
+  
+  <p>
+    There are three types of lists in HTML: <b>unordered lists</b>,
+    <b>ordered lists</b>, and <b>definition lists</b>. Of these, only the first
+    two are commonly used, so we won't mention definition lists again.
+  </p>
+  
+  <p>
+    <i>Unordered lists</i> are lists where the order of the content is not
+    particularly important. These are represented as <i>bullet lists</i>, such
+    as the one above the beginning of this section.
+  </p>
+  
+  <p>
+    Unordered lists are surrounded by a <code>&lt;ul&gt;</code> opening tag and
+    a <code>&lt;/ul&gt;</code> closing tag. ("ul" is short for "unordered
+    list".) Each list item is surrounded by a <code>&lt;li&gt;</code> opening
+    tag and <code>&lt;/li&gt;</code> closing tag. ("li" is short for "list
+    item".)
+  </p>
+  
+  <p>
+    Here is an example:
+  </p>
+  
+  <code-block language="html">
+&lt;p&gt;Key ingredients in apple juice:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apples&lt;/li&gt;
+  &lt;li&gt;Juice&lt;/li&gt;
+  &lt;li&gt;A bunch of preservatives and additives&lt;/li&gt;
+&lt;/ul&gt;
+  </code-block>
+  
+  <h3>Ordered lists</h3>
+  
+  <p>
+    <i>Ordered lists</i>, on the other hand, are lists where the order of the
+    content is important. These are represented as <i>numbered lists</i>.
+  </p>
+  
+  <p>
+    Ordered lists are surrounded by a <code>&lt;ol&gt;</code> opening tag and
+    a <code>&lt;/ol&gt;</code> closing tag. (Think "ol" equals "ordered list".)
+    Each list item is surrounded by a <code>&lt;li&gt;</code> opening tag and
+    <code>&lt;/li&gt;</code> closing tag, just like in unordered lists.
+  </p>
+  
+  <p>
+    Here is an example:
+  </p>
+  
+  <code-block language="html">
+&lt;p&gt;How to make apple juice:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Acquire some apples.&lt;/li&gt;
+  &lt;li&gt;Cut the skin off the apples using a paring knife.&lt;/li&gt;
+  &lt;li&gt;Cut the core out of the apples using a paring knife.&lt;/li&gt;
+  &lt;li&gt;Put the apple slices into a food processor.&lt;/li&gt;
+  &lt;li&gt;Add juice.&lt;/li&gt;
+  &lt;li&gt;Add additives and preservatives.&lt;/li&gt;
+&lt;/ol&gt;
+  </code-block>
+  
+  <h3>Headers</h3>
+  
+  <p>
+    There are six different header tags, each representing a different level
+    of heading for your content:
+  </p>
+  
+  <ul>
+    <li><code>&lt;h1&gt;&lt;/h1&gt;</code></li>
+    <li><code>&lt;h2&gt;&lt;/h2&gt;</code></li>
+    <li><code>&lt;h3&gt;&lt;/h3&gt;</code></li>
+    <li><code>&lt;h4&gt;&lt;/h4&gt;</code></li>
+    <li><code>&lt;h5&gt;&lt;/h5&gt;</code></li>
+    <li><code>&lt;h6&gt;&lt;/h6&gt;</code></li>
+  </ul>
+  
+  <p>
+    The <code>&lt;h1&gt;</code> tag represents a main-level header. h2 is a
+    subheader, and higher numbers are even deeper subheaders. Visually,
+    <code>&lt;h1&gt;</code> is biggest and <code>&lt;h6&gt;</code> is smallest.
+  </p>
+  
+  <p>
+    You can use headers to group text together, and even to put groups in a
+    larger group. In fact, we are using <code>&lt;h1&gt;</code> through
+    <code>&lt;h3&gt;</code> on this page to group all of the content together!
+  </p>
+  
+  <p>
+    Here is an example of how you can use headers to group content:
+  </p>
+  
+  <code-block language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;All About Apple Juice
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;h1&gt;Everything I Know About Apple Juice&lt;/h1&gt;
+    
+    &lt;h2&gt;Ingredients&lt;/h2&gt;
+    
+    &lt;p&gt;Key ingredients in apple juice:&lt;/p&gt;
+    
+    &lt;ul&gt;
+      &lt;li&gt;Apples&lt;/li&gt;
+      &lt;li&gt;Juice&lt;/li&gt;
+      &lt;li&gt;A bunch of preservatives and additives&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Making Apple Juice&lt;/h2&gt;
+    
+    &lt;p&gt;How to make apple juice:&lt;/p&gt;
+    
+    &lt;ol&gt;
+      &lt;li&gt;Acquire some apples.&lt;/li&gt;
+      &lt;li&gt;Cut the skin off the apples using a paring knife.&lt;/li&gt;
+      &lt;li&gt;Cut the core out of the apples using a paring knife.&lt;/li&gt;
+      &lt;li&gt;Put the apple slices into a food processor.&lt;/li&gt;
+      &lt;li&gt;Add juice.&lt;/li&gt;
+      &lt;li&gt;Add additives and preservatives.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <p>
+    Which would look something like this in a browser:
+  </p>
+  
+  <html-example>
+    <h1>Everything I Know About Apple Juice</h1>
+    
+    <h2>Ingredients</h2>
+    
+    <p>Key ingredients in apple juice:</p>
+    
+    <ul>
+      <li>Apples</li>
+      <li>Juice</li>
+      <li>A bunch of preservatives and additives</li>
+    </ul>
+    
+    <h2>Making Apple Juice</h2>
+    
+    <p>How to make apple juice:</p>
+    
+    <ol>
+      <li>Acquire some apples.</li>
+      <li>Cut the skin off the apples using a paring knife.</li>
+      <li>Cut the core out of the apples using a paring knife.</li>
+      <li>Put the apple slices into a food processor.</li>
+      <li>Add juice.</li>
+      <li>Add additives and preservatives.</li>
+    </ol>
+  </html-example>
 
   <h2>Linking to Different Pages</h2>
   
@@ -149,12 +329,25 @@
 
   <h1>Exercises</h1>
 
-  <p>(TODO: Create exercise that doesn't depend on previous module)</p>
 
   <ol>
+    <li>
+      Create a complete HTML file with the following:
+      <ul>
+        <li>Page title of "My Favorite Music"</li>
+        <li>Header (<code>&lt;h1&gt;</code>) with "My Favorite Music"</li>
+        <li>
+          An introductory paragraph saying something like, "These are my top 3
+          favorite songs:"
+        </li>
+        <li>
+          An ordered list of three items, where each item contains a song name
+          and an artist name (representing a favorite song of yours)
+        </li>
+      </ul>
+    </li>
     <li>
       Modify the My Favorite Music exercise so that song titles are in
       <i>italics</i>.
     </li>
   </ol>
-</template>
