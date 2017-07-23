@@ -7,31 +7,32 @@
   <h2>Introduction</h2>
   
   <p>
-    <b>HTML</b> stands for <i>HyperText Markup Language</i>. Put simply, it is
-    the language we use to write content in web pages.
-  </p>
-  
-  <p>
-    <b>CSS</b> stands for <b>Cascading Style Sheets</b>. We use CSS in order to
-    change the <i>presentation</i> of our content. This ties in very well with
-    HTML, which contains our content and semantic structure; and it complements
-    JavaScript, which is all about how the user interacts with our page.
+    <b>HTML</b> stands for <i>HyperText Markup Language</i>. It is the language
+    we use to write content in web pages.
   </p>
   
   <h2>Structure of HTML</h2>
   
   <p>
     HTML is made up of <b>elements</b>, which are in turn composed of
-    <b>tags</b> and <b>content</b>. A <i>tag</i> is written as one or more words
-    within <i>angle brackets</i>, such as <code>&lt;b&gt;</code> or
-    <code>&lt;a href="http://google.com"&gt;</code>. Tags can enclose
-    <i>content</i>, which may be text or more elements. When a tag has content
-    inside of it, we usually need to write a <i>closing tag</i>, which is
-    similar to the tag that comes before the content, except that it has a
-    leading forward slash.
+    <b>tags</b> and <b>content</b>.
   </p>
   
-  <p>Here are some examples:</p>
+  <p>
+    A <i>tag</i> is written as one or more words within <i>angle brackets</i>,
+    such as <code>&lt;b&gt;</code> or
+    <code>&lt;a href="http://google.com"&gt;</code>.
+  </p>
+  
+  <p>
+    Tags can enclose <i>content</i>, which may include text or more elements.
+    When a tag has content inside of it, we usually need to write a <i>closing
+    tag</i>. A closing tag looks similar to the tag that comes before the
+    content, except that it has a leading forward slash. An example of a closing
+    tag is <code>&lt;/b&gt;</code>.
+  </p>
+  
+  <p>Here are some example tags:</p>
   
   <code-block language="html">
 &lt;p&gt;This is a paragraph of text. A "p" tag is used to mark a paragraph.&lt;/p&gt;
@@ -78,7 +79,7 @@
     just use single spaces inside tags:
   </p>
   
-  <code-block language="html">&lt;h1 class=&quot;spacing matters&quot;&gt;Spacing     doesn't    matter here!&lt;/h1&gt;</code-block>
+  <code-block language="html">&lt;h1 class=&quot;spacing matters here&quot;&gt;Spacing     doesn't    matter here!&lt;/h1&gt;</code-block>
   
   <h2>Structure of an HTML Document</h2>
   
@@ -104,8 +105,8 @@
   <p>
     At the top of an HTML document is the <b>document type declaration</b>.
     This tells a web browser what kind of HTML is being used. This used to be
-    very specific, but it is sufficient to write <code>&lt;!DOCTYPE html&gt;</code>
-    for modern HTML.
+    very specific (and hard to remember), but for today's Web, you can just
+    write <code>&lt;!DOCTYPE html&gt;</code>.
   </p>
   
   <h3>Document Head</h3>
@@ -139,8 +140,8 @@
   
   <p>
     Underneath the document head is the <b>document body</b>. This is where the
-    main content of the page goes. There are a decent number of HTML tags we can
-    use to present our content. Most of them are pretty simple, don't worry.
+    main content of the page goes. We can use many different HTML tags to 
+    present our content.
   </p>
   
   <p>
@@ -168,7 +169,7 @@
   </code-block>
   
   <p>
-    Below is how the page would roughly look in a (small) browser:
+    Below is how the page would roughly look in a browser:
   </p>
   
   <html-example>
@@ -211,10 +212,10 @@
   
   <p>
     Unordered lists are surrounded by a <code>&lt;ul&gt;</code> opening tag and
-    a <code>&lt;/ul&gt;</code> closing tag. (Think &quot;ul&quot; equals
-    &quot;unordered list&quot;.) Each list item is surrounded by a
-    <code>&lt;li&gt;</code> opening tag and <code>&lt;/li&gt;</code> closing
-    tag.
+    a <code>&lt;/ul&gt;</code> closing tag. ("ul" is short for "unordered
+    list".) Each list item is surrounded by a <code>&lt;li&gt;</code> opening
+    tag and <code>&lt;/li&gt;</code> closing tag. ("li" is short for "list
+    item".)
   </p>
   
   <p>
@@ -234,16 +235,15 @@
   <h3>Ordered lists</h3>
   
   <p>
-    <i>Ordered lists</i>, in contrast, are lists where the order of the content
-    is important. These are represented as <i>numbered lists</i>.
+    <i>Ordered lists</i>, on the other hand, are lists where the order of the
+    content is important. These are represented as <i>numbered lists</i>.
   </p>
   
   <p>
     Ordered lists are surrounded by a <code>&lt;ol&gt;</code> opening tag and
-    a <code>&lt;/ol&gt;</code> closing tag. (Think &quot;ol&quot; equals
-    &quot;ordered list*quot;.) Each list item is surrounded by a
-    <code>&lt;li&gt;</code> opening tag and <code>&lt;/li&gt;</code> closing
-    tag, just like in unordered lists.
+    a <code>&lt;/ol&gt;</code> closing tag. (Think "ol" equals "ordered list".)
+    Each list item is surrounded by a <code>&lt;li&gt;</code> opening tag and
+    <code>&lt;/li&gt;</code> closing tag, just like in unordered lists.
   </p>
   
   <p>
@@ -263,11 +263,6 @@
 &lt;/ol&gt;
   </code-block>
   
-  <p>
-    <b><i>Disclaimer:</i></b> This is not a cooking class and we make no
-    representation of the accuracy of any cooking suggestions.
-  </p>
-  
   <h3>Headers</h3>
   
   <p>
@@ -285,15 +280,15 @@
   </ul>
   
   <p>
-    Higher header numbers mean levels of subheading/nesting. In other words,
+    The <code>&lt;h1&gt;</code> tag represents a main-level header. h2 is a
+    subheader, and higher numbers are even deeper subheaders. Visually,
     <code>&lt;h1&gt;</code> is biggest and <code>&lt;h6&gt;</code> is smallest.
   </p>
   
   <p>
-    You can use headers to intelligently group text together, and even to put
-    groups in a larger group. In fact, we are using <code>&lt;h1&gt;</code>
-    through <code>&lt;h3&gt;</code> on this page to group all of the content
-    together!
+    You can use headers to group text together, and even to put groups in a
+    larger group. In fact, we are using <code>&lt;h1&gt;</code> through
+    <code>&lt;h3&gt;</code> on this page to group all of the content together!
   </p>
   
   <p>
@@ -410,11 +405,9 @@
   </code-block>
   
   <p>
-    <i><b>Warning:</b></i> It might be tempting to use bold or italic text on
-    entire paragraphs to make them stand out. If we can't convince you that
-    "less is more" when it comes to content emphasis, at least let us convince
-    you not to use the tags. <i>Cascading style sheets</i>, which we will cover
-    very soon, are much more efficient for that task.
+    <i><b>Warning:</b></i> You might be tempted to use bold or italic text on
+    entire paragraphs to make them stand out. <i>Cascading style sheets</i>,
+    which we will cover very soon, are much more efficient for that task.
   </p>
   
   <h1>Exercises</h1>
