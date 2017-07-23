@@ -1,0 +1,440 @@
+<template>
+  <require from="resources/shared/code-block"></require>
+  <require from="resources/shared/html-example.html"></require>
+  
+  <h1>HTML Basics</h1>
+  
+  <h2>Introduction</h2>
+  
+  <p>
+    <b>HTML</b> stands for <i>HyperText Markup Language</i>. Put simply, it is
+    the language we use to write content in web pages.
+  </p>
+  
+  <p>
+    <b>CSS</b> stands for <b>Cascading Style Sheets</b>. We use CSS in order to
+    change the <i>presentation</i> of our content. This ties in very well with
+    HTML, which contains our content and semantic structure; and it complements
+    JavaScript, which is all about how the user interacts with our page.
+  </p>
+  
+  <h2>Structure of HTML</h2>
+  
+  <p>
+    HTML is made up of <b>elements</b>, which are in turn composed of
+    <b>tags</b> and <b>content</b>. A <i>tag</i> is written as one or more words
+    within <i>angle brackets</i>, such as <code>&lt;b&gt;</code> or
+    <code>&lt;a href="http://google.com"&gt;</code>. Tags can enclose
+    <i>content</i>, which may be text or more elements. When a tag has content
+    inside of it, we usually need to write a <i>closing tag</i>, which is
+    similar to the tag that comes before the content, except that it has a
+    leading forward slash.
+  </p>
+  
+  <p>Here are some examples:</p>
+  
+  <code-block language="html">
+&lt;p&gt;This is a paragraph of text. A "p" tag is used to mark a paragraph.&lt;/p&gt;
+
+&lt;b&gt;This is bold text, using a "b" tag.&lt;/b&gt;
+
+&lt;p&gt;Some HTML elements can be used &lt;b&gt;inside&lt;/b&gt; of other elements!&lt;/p&gt;
+  </code-block>
+  
+  <h2>Whitespace in HTML</h2>
+  
+  <p>
+    Whitespace in the text between tags is collapsed:
+  </p>
+  
+  <code-block language="html">
+&lt;p&gt;This paragraph will look the same as the others in a browser.&lt;/p&gt;
+
+&lt;p&gt;This      paragraph      will      look      the      same      as      the      others      in      a      browser.&lt;/p&gt;
+
+&lt;p&gt;
+  This
+  paragraph
+  will
+  look
+  the
+  same
+  as
+  the
+  others
+  in
+  a
+  browser.
+&lt;/p&gt;
+  </code-block>
+  
+  <p>
+    When we have a lot of content inside a tag, it's always a good idea to add
+    some spacing in the HTML file to make it readable.
+  </p>
+  
+  <p>
+    What about in tags themselves? That's a little more complicated. To be safe,
+    just use single spaces inside tags:
+  </p>
+  
+  <code-block language="html">&lt;h1 class=&quot;spacing matters&quot;&gt;Spacing     doesn't    matter here!&lt;/h1&gt;</code-block>
+  
+  <h2>Structure of an HTML Document</h2>
+  
+  <p>
+    HTML documents have the same structure:
+  </p>
+  
+  <code-block language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <h3>Document Type Declaration (<code>&lt;!DOCTYPE html&gt;</code>)</h3>
+  
+  <p>
+    At the top of an HTML document is the <b>document type declaration</b>.
+    This tells a web browser what kind of HTML is being used. This used to be
+    very specific, but it is sufficient to write <code>&lt;!DOCTYPE html&gt;</code>
+    for modern HTML.
+  </p>
+  
+  <h3>Document Head</h3>
+  
+  <p>
+    Below the document type declaration is the <b>document head</b>. Nothing in
+    the document head is visible when a user views the page. The purpose of the
+    document head section is to put in <i>metadata</i> about the page and to
+    reference <i>stylesheets</i> and <i>scripts</i> that the page depends on.
+  </p>
+  
+  <p>
+    The document head is where the <b>document title</b> is specified. The
+    document title usually appears at the top of the browser window, outside of
+    the page itself. We can choose a title using the <code>&lt;title&gt;</code>
+    tag.
+  </p>
+  
+  <p>Example title:</p>
+  
+  <code-block language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Title Goes Here&lt;/title&gt;
+  &lt;/head&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <h3>Document Body</h3>
+  
+  <p>
+    Underneath the document head is the <b>document body</b>. This is where the
+    main content of the page goes. There are a decent number of HTML tags we can
+    use to present our content. Most of them are pretty simple, don't worry.
+  </p>
+  
+  <p>
+    Here is a full example of a simple page:
+  </p>
+  
+  <code-block>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Example Web Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome!&lt;/h1&gt;
+    
+    &lt;p&gt;
+      This is a paragraph on my web page.
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+      Here is another one, with &lt;b&gt;bold&lt;/b&gt; and &lt;i&gt;italic&lt;/i&gt; text.
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <p>
+    Below is how the page would roughly look in a (small) browser:
+  </p>
+  
+  <html-example>
+    <h1>Welcome!</h1>
+    
+    <p>This is a paragraph on my web page.</p>
+    
+    <p>
+      Here is another one, with <b>bold</b> and <i>italic</i> text.
+    </p>
+  </html-example>
+  
+  <h2>Presenting Content</h2>
+  
+  <p>
+    We have already mentioned that <i>paragraphs</i> of text can be represented
+    with the <code>&lt;p&gt;</code> tag. Here are a few other ways to organize
+    text:
+  </p>
+  
+  <ul>
+    <li>Unordered lists</li>
+    <li>Ordered lists</li>
+    <li>Grouped via headers</li>
+  </ul>
+  
+  <h3>Unordered lists</h3>
+  
+  <p>
+    There are three types of lists in HTML: <b>unordered lists</b>,
+    <b>ordered lists</b>, and <b>definition lists</b>. Of these, only the first
+    two are commonly used, so we won't mention definition lists again.
+  </p>
+  
+  <p>
+    <i>Unordered lists</i> are lists where the order of the content is not
+    particularly important. These are represented as <i>bullet lists</i>, such
+    as the one above the beginning of this section.
+  </p>
+  
+  <p>
+    Unordered lists are surrounded by a <code>&lt;ul&gt;</code> opening tag and
+    a <code>&lt;/ul&gt;</code> closing tag. (Think &quot;ul&quot; equals
+    &quot;unordered list&quot;.) Each list item is surrounded by a
+    <code>&lt;li&gt;</code> opening tag and <code>&lt;/li&gt;</code> closing
+    tag.
+  </p>
+  
+  <p>
+    Here is an example:
+  </p>
+  
+  <code-block language="html">
+&lt;p&gt;Key ingredients in apple juice:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apples&lt;/li&gt;
+  &lt;li&gt;Juice&lt;/li&gt;
+  &lt;li&gt;A bunch of preservatives and additives&lt;/li&gt;
+&lt;/ul&gt;
+  </code-block>
+  
+  <h3>Ordered lists</h3>
+  
+  <p>
+    <i>Ordered lists</i>, in contrast, are lists where the order of the content
+    is important. These are represented as <i>numbered lists</i>.
+  </p>
+  
+  <p>
+    Ordered lists are surrounded by a <code>&lt;ol&gt;</code> opening tag and
+    a <code>&lt;/ol&gt;</code> closing tag. (Think &quot;ol&quot; equals
+    &quot;ordered list*quot;.) Each list item is surrounded by a
+    <code>&lt;li&gt;</code> opening tag and <code>&lt;/li&gt;</code> closing
+    tag, just like in unordered lists.
+  </p>
+  
+  <p>
+    Here is an example:
+  </p>
+  
+  <code-block language="html">
+&lt;p&gt;How to make apple juice:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Acquire some apples.&lt;/li&gt;
+  &lt;li&gt;Cut the skin off the apples using a paring knife.&lt;/li&gt;
+  &lt;li&gt;Cut the core out of the apples using a paring knife.&lt;/li&gt;
+  &lt;li&gt;Put the apple slices into a food processor.&lt;/li&gt;
+  &lt;li&gt;Add juice.&lt;/li&gt;
+  &lt;li&gt;Add additives and preservatives.&lt;/li&gt;
+&lt;/ol&gt;
+  </code-block>
+  
+  <p>
+    <b><i>Disclaimer:</i></b> This is not a cooking class and we make no
+    representation of the accuracy of any cooking suggestions.
+  </p>
+  
+  <h3>Headers</h3>
+  
+  <p>
+    There are six different header tags, each representing a different level
+    of heading for your content:
+  </p>
+  
+  <ul>
+    <li><code>&lt;h1&gt;&lt;/h1&gt;</code></li>
+    <li><code>&lt;h2&gt;&lt;/h2&gt;</code></li>
+    <li><code>&lt;h3&gt;&lt;/h3&gt;</code></li>
+    <li><code>&lt;h4&gt;&lt;/h4&gt;</code></li>
+    <li><code>&lt;h5&gt;&lt;/h5&gt;</code></li>
+    <li><code>&lt;h6&gt;&lt;/h6&gt;</code></li>
+  </ul>
+  
+  <p>
+    Higher header numbers mean levels of subheading/nesting. In other words,
+    <code>&lt;h1&gt;</code> is biggest and <code>&lt;h6&gt;</code> is smallest.
+  </p>
+  
+  <p>
+    You can use headers to intelligently group text together, and even to put
+    groups in a larger group. In fact, we are using <code>&lt;h1&gt;</code>
+    through <code>&lt;h3&gt;</code> on this page to group all of the content
+    together!
+  </p>
+  
+  <p>
+    Here is an example of how you can use headers to group content:
+  </p>
+  
+  <code-block language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;All About Apple Juice
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;h1&gt;Everything I Know About Apple Juice&lt;/h1&gt;
+    
+    &lt;h2&gt;Ingredients&lt;/h2&gt;
+    
+    &lt;p&gt;Key ingredients in apple juice:&lt;/p&gt;
+    
+    &lt;ul&gt;
+      &lt;li&gt;Apples&lt;/li&gt;
+      &lt;li&gt;Juice&lt;/li&gt;
+      &lt;li&gt;A bunch of preservatives and additives&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Making Apple Juice&lt;/h2&gt;
+    
+    &lt;p&gt;How to make apple juice:&lt;/p&gt;
+    
+    &lt;ol&gt;
+      &lt;li&gt;Acquire some apples.&lt;/li&gt;
+      &lt;li&gt;Cut the skin off the apples using a paring knife.&lt;/li&gt;
+      &lt;li&gt;Cut the core out of the apples using a paring knife.&lt;/li&gt;
+      &lt;li&gt;Put the apple slices into a food processor.&lt;/li&gt;
+      &lt;li&gt;Add juice.&lt;/li&gt;
+      &lt;li&gt;Add additives and preservatives.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <p>
+    Which would look something like this in a browser:
+  </p>
+  
+  <html-example>
+    <h1>Everything I Know About Apple Juice</h1>
+    
+    <h2>Ingredients</h2>
+    
+    <p>Key ingredients in apple juice:</p>
+    
+    <ul>
+      <li>Apples</li>
+      <li>Juice</li>
+      <li>A bunch of preservatives and additives</li>
+    </ul>
+    
+    <h2>Making Apple Juice</h2>
+    
+    <p>How to make apple juice:</p>
+    
+    <ol>
+      <li>Acquire some apples.</li>
+      <li>Cut the skin off the apples using a paring knife.</li>
+      <li>Cut the core out of the apples using a paring knife.</li>
+      <li>Put the apple slices into a food processor.</li>
+      <li>Add juice.</li>
+      <li>Add additives and preservatives.</li>
+    </ol>
+  </html-example>
+  
+  <h2>Emphasizing Content</h2>
+  
+  <p>
+    We have already seen two tags for emphasizing content: the
+    <code>&lt;b&gt;</code> (bold) tag, and the <code>&lt;i&gt;</code> (italic)
+    tag. Just like in a word processor, bold text is darker and thicker, and
+    italic text is artfully sloped.
+  </p>
+  
+  <p>
+    You can also write underlined text using a <code>&lt;u&gt;</code> tag.
+    However, underlined text is very uncommon on the Web. In general, unless you
+    are following a style guide which requires underlining certain things, you
+    can just use bold and italic text.
+  </p>
+  
+  <p>
+    For all three of these tags, simply use them around text that needs to be
+    emphasized. This works in paragraphs and lists, as well as pretty much
+    anywhere else. See below:
+  </p>
+  
+  <code-block language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Emphasizing text&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+      This paragraph has &lt;b&gt;bold&lt;/b&gt; text.
+      This paragraph also has &lt;i&gt;italic&lt;/i&gt; text.
+    &lt;/p&gt;
+    
+    &lt;ul&gt;
+      &lt;li&gt;Something &lt;b&gt;important.&lt;b&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;i&gt;Another&lt;/i&gt; important thing.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <p>
+    <i><b>Warning:</b></i> It might be tempting to use bold or italic text on
+    entire paragraphs to make them stand out. If we can't convince you that
+    "less is more" when it comes to content emphasis, at least let us convince
+    you not to use the tags. <i>Cascading style sheets</i>, which we will cover
+    very soon, are much more efficient for that task.
+  </p>
+  
+  <h1>Exercises</h1>
+  
+  <ol>
+    <li>
+      Create a complete HTML file with the following:
+      <ul>
+        <li>Page title of "My Favorite Music"</li>
+        <li>Header (<code>&lt;h1&gt;</code>) with "My Favorite Music"</li>
+        <li>
+          An introductory paragraph saying something like, "These are my top 3
+          favorite songs:"
+        </li>
+        <li>
+          An ordered list of three items, where each item contains a song name
+          and an artist name (representing a favorite song of yours)
+        </li>
+      </ul>
+    </li>
+  </ol>
+  
+</template>

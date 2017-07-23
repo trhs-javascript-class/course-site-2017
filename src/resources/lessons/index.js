@@ -27,22 +27,34 @@ export class LessonsIndex {
       title: '4. Functions',
       nav: true
     }, {
-      route: 'html-css',
-      name: 'html-css',
-      moduleId: 'resources/lessons/html-css',
-      title: '5. HTML & CSS',
+      route: 'html-basics',
+      name: 'html-basics',
+      moduleId: 'resources/lessons/html-basics',
+      title: '5. HTML Basics',
+      nav: true
+    }, {
+      route: 'html-more',
+      name: 'html-more',
+      moduleId: 'resources/lessons/html-more',
+      title: '6. More HTML',
+      nav: true
+    }, {
+      route: 'css-and-selectors',
+      name: 'css-and-selectors',
+      moduleId: 'resources/lessons/css-and-selectors',
+      title: '7. CSS and Selectors',
       nav: true
     }, {
       route: 'jquery',
       name: 'jquery',
       moduleId: 'resources/lessons/jquery',
-      title: '6. Using jQuery',
+      title: '8. Using jQuery',
       nav: true
     }, {
       route: 'clock-project',
       name: 'clock-project',
       moduleId: 'resources/lessons/clock-project',
-      title: '7. Clock Project',
+      title: '9. Clock Project',
       nav: true
     }]);
   }
