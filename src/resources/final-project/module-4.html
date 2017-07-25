@@ -5,10 +5,12 @@
 
   <h2>Assigning Pok&eacute;mon to Tiles</h2>
 
-  <p>Please follow each step completely. Use the other lessons and resources
-  (Mozilla Developer Network) to help you. You may also get help from your
-  classmates. Kevin and Adam will be able to help, so if you get stuck,
-  raise your hand to let them know.</p>
+  <p>
+    Please follow each step completely. Use the other lessons and resources
+    (Mozilla Developer Network) to help you. You may also get help from your
+    classmates. Kevin and Adam will be able to help, so if you get stuck,
+    raise your hand to let them know.
+  </p>
 
   <h3>What's Next?</h3>
 
@@ -23,9 +25,9 @@
   <p>
     Our tiles are laid out in a two-dimensional fashion (four rows by four
     columns). However, in order to make things easier for us, our Pok&eacute;mon
-    information will be stored in a one-dimensional list. This basically means
-    we will have 16 Pok&eacute;mon names in one array, and every title will have
-    to know which index to use to match up with its Pok&eacute;mon information.
+    information will be stored in a one-dimensional array. This means we will
+    have 16 Pok&eacute;mon names in one array, and every tile will have to
+    know which index to use to match up with its Pok&eacute;mon information.
   </p>
 
   <p>
@@ -88,15 +90,17 @@
 
   <p>
     The next thing we need to do is to come up with a list of our Pok&eacute;mon
-    names. We will have 8 Pok&eacute;, each of which will appear in two
+    names. We will have 8 Pok&eacute;mon, each of which will appear in two
     different tiles.
   </p>
 
   <p>
     Inside the jQuery function at the very top (above <code>renderTiles</code>),
-    let's declare a variable representing our Pok&eacute;mon names. Since we
-    have to name each Pok&acute;mon twice, the simplest way to do this is to
-    just name them explicitly:
+    let's declare a variable representing our Pok&eacute;mon names. Each
+    Pok&eacute;mon will appear twice, since we need to have two tiles for each
+    picture we use in our Memory game. Since we have to name each
+    Pok&eacute;mon twice, the simplest way to do this is to just name them
+    explicitly in an array:
   </p>
 
   <code-block language="javascript">
@@ -151,7 +155,7 @@ function shuffle(array) {
     let counter = array.length;
 
     // While there are elements in the array
-    while (counter > 0) {
+    while (counter &gt; 0) {
         // Pick a random index
         let index = Math.floor(Math.random() * counter);
 

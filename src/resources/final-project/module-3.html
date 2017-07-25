@@ -5,10 +5,12 @@
 
   <h2>Creating Tiles</h2>
 
-  <p>Please follow each step completely. Use the other lessons and resources
-  (Mozilla Developer Network) to help you. You may also get help from your
-  classmates. Kevin and Adam will be able to help, so if you get stuck,
-  raise your hand to let them know.</p>
+  <p>
+    Please follow each step completely. Use the other lessons and resources
+    (Mozilla Developer Network) to help you. You may also get help from your
+    classmates. Kevin and Adam will be able to help, so if you get stuck,
+    raise your hand to let them know.
+  </p>
 
   <h3>Step 1</h3>
 
@@ -25,56 +27,70 @@
   <h3>Step 2</h3>
 
   <p>
-    Inside of our <code>renderTiles</code> function, declare a <code>const</code>
-    variable called <code>gridSize</code>. Set it equal to 4.</p>
+    Inside of our <code>renderTiles</code> function, declare a
+    <code>const</code> variable called <code>gridSize</code>. Set it equal to 4.
   </p>
 
-  <p>Now, start a for-loop. Name the variable for the for-loop <code>row</code>
-  and set it equal to 0. Have the for-loop run as long as the <code>row</code>
-  variable is less than the <code>gridSize</code> variable. Increment the
-  <code>row</code> variable by 1 using the <code>+=</code> operator. When you
-  are finished, it should look like this:</p>
+  <p>
+    Now, start a for-loop. Name the variable for the for-loop <code>row</code>
+    and set it equal to 0. Have the for-loop run as long as the <code>row</code>
+    variable is less than the <code>gridSize</code> variable. Increment the
+    <code>row</code> variable by 1 using the <code>+=</code> operator. When you
+    are finished, it should look like this:
+  </p>
 
   <code-block language="javascript">for (let row = 0; row < gridSize; row += 1) { }</code-block>
 
   <h3>Step 3</h3>
 
-  <p>Inside the braces of this for loop, create a new <code>&lt;div&gt;</code>
-  element using jQuery and store it in a variable.</p>
+  <p>
+    Inside the braces of this for loop, create a new <code>&lt;div&gt;</code>
+    element using jQuery and store it in a variable.
+  </p>
   
-  <p>When using a variable to store a jQuery object, it is a good idea to prefix
-  the variable with <code>$</code>. This will help you remember that the variable
-  value is a jQuery object. This is just a convention and is not required.</p>
+  <p>
+    When using a variable to store a jQuery object, it is a good idea to prefix
+    the variable with <code>$</code>. This will help you remember that the
+    variable's value is a jQuery object. This is just a convention and is not
+    required.
+  </p>
   
-  <p>When you have finished, your code should look like the code below:</p>
+  <p>
+    When you have finished, your code should look like the code below:
+  </p>
 
   <code-block language="javascript">var $tileRow = $(&quot;&lt;div class=&#39;tile-row&#39;&gt;&lt;/div&gt;&quot;);</code-block>
   
   <p>
     <b><i>Important:</i></b> At this point, your tile row has not been added to
-    the page. The div inside <code>$tileRow</code> is said to be <i>detached</i>
-    from the page. This is like when you write on a post-it note, but you haven't
+    the page. The div inside <code>$tileRow</code> is <i>detached</i> from the
+    page. This is like when you write on a post-it note, but you haven't
     stuck the post-it note on the wall. Our tile row exists, it just hasn't been
-    stuck on the "wall" (HTML page) yet.
+    added to the HTML page yet.
   </p>
 
   <h3>Step 4</h3>
 
-  <p>Right after the <code>$tileRow</code> variable you just created, create
-  another <code>for-loop</code>, which we will refer to as the <i>inner for-loop</i>.
-  Name the for-loop variable <code>column</code>, set it to equal 0, and have the
-  loop run as long as <code>column</code> is less than <code>gridSize</code>.
-  Increment <code>column</code> by 1 each iteration.</p>
+  <p>
+    Right after the <code>$tileRow</code> variable you just created, create
+    another <code>for-loop</code>. (We will refer to this new for-loop as the
+    <i>inner for-loop</i>). Name the for-loop variable <code>column</code>, set
+    it to equal 0, and have the loop run as long as <code>column</code> is less
+    than <code>gridSize</code>. Increment <code>column</code> by 1 each
+    iteration.
+  </p>
   
-  <p>See if you can figure out how to write this for loop on your own. If you get stuck,
-  ask for help.</p>
+  <p>
+    See if you can figure out how to write this for loop on your own. If you
+    get stuck, ask for help.
+  </p>
   
   <p>
     The overall outer/inner loop structure should look like this:
   </p>
   
   <code-block language="javascript">
-for (let row = 0; row < gridSize; row += 1) {
+for (let row = 0; row &lt; gridSize; row += 1) {
   const $tileRow = /* ... */
 
   for (let column /* that's all you get here :-), ask a classmate or Adam/Kevin if you need help */) {
@@ -84,9 +100,12 @@ for (let row = 0; row < gridSize; row += 1) {
 
   <h3>Step 5</h3>
 
-  <p>Inside the braces for the inner for-loop, we will again create a new
-  <code>&lt;div&gt;</code> element using the same syntax as in Step 4. Name
-  your variable <code>$tile</code>. The HTML code you should have is below:</p>
+  <p>
+    Inside the braces for the inner for-loop, we will again create a new
+    <code>&lt;div&gt;</code> element using the same syntax as in Step 4. Name
+    your variable <code>$tile</code>. The HTML code you should use when calling
+    jQuery is below:
+  </p>
 
   <code-block language="javascript">&lt;div class=&#39;tile&#39;&gt;&lt;/div&gt;</code-block>
 
@@ -94,22 +113,24 @@ for (let row = 0; row < gridSize; row += 1) {
 
   <p>
     We now should append our <code>$tile</code> div to our <code>$tileRow</code>
-    div. We can use the <code>.append()</code> function for this. The contents of
-    your inner for-loop should look like the code below:
+    div. We can use the <code>.append()</code> function for this. The contents
+    of your inner for-loop should look like the code below:
   </p>
 
   <code-block language="javascript">
-var $tile = $(&quot;&lt;div class=&#39;tile&#39;&gt;&lt;/div&gt;&quot;);
+var $tile = $("&lt;div class=&#39;tile&#39;&gt;&lt;/div&gt;");
 $tileRow.append(tile);
   </code-block>
 
   <h3>Step 7</h3>
 
-  <p>Immediately after the inner for-loop, outside of the braces for it, append
-  the contents of <code>$tileRow</code> to the tiles div. Again, you should use
-  the <code>.append()</code> function here. You can pass <code>$tileRow</code>
-  right into append, no HTML is needed here. Once you have done this, refresh
-  your page.</p>
+  <p>
+    Immediately after the inner for-loop, outside of the braces for it, append
+    the contents of <code>$tileRow</code> to the tiles div. Again, you should
+    use the <code>.append()</code> function here. You can pass
+    <code>$tileRow</code> right into append, no HTML is needed here. Once you
+    have done this, refresh your page.
+  </p>
 
   <p>
     The append code should look something like this:
