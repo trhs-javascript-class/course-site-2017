@@ -3,24 +3,199 @@
   <require from="resources/shared/html-example.html"></require>
 
   <h1>More HTML</h1>
+  
+  <h2>Organizing Content</h2>
+  
+  <p>
+    We have already mentioned that <i>paragraphs</i> of text can be represented
+    with the <code>&lt;p&gt;</code> tag. Here are a few other ways to organize
+    text:
+  </p>
+  
+  <ul>
+    <li>Unordered lists</li>
+    <li>Ordered lists</li>
+    <li>Grouped via headers</li>
+  </ul>
+  
+  <h3>Unordered lists</h3>
+  
+  <p>
+    There are three types of lists in HTML: <b>unordered lists</b>,
+    <b>ordered lists</b>, and <b>definition lists</b>. Of these, only the first
+    two are commonly used, so we won't mention definition lists again.
+  </p>
+  
+  <p>
+    <i>Unordered lists</i> are lists where the order of the content is not
+    particularly important. These are represented as <i>bullet lists</i>, such
+    as the one above the beginning of this section.
+  </p>
+  
+  <p>
+    Unordered lists are surrounded by a <code>&lt;ul&gt;</code> opening tag and
+    a <code>&lt;/ul&gt;</code> closing tag. ("ul" is short for "unordered
+    list".) Each list item is surrounded by a <code>&lt;li&gt;</code> opening
+    tag and <code>&lt;/li&gt;</code> closing tag. ("li" is short for "list
+    item".)
+  </p>
+  
+  <p>
+    Here is an example:
+  </p>
+  
+  <code-block language="html">
+&lt;p&gt;Key ingredients in apple juice:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apples&lt;/li&gt;
+  &lt;li&gt;Juice&lt;/li&gt;
+  &lt;li&gt;A bunch of preservatives and additives&lt;/li&gt;
+&lt;/ul&gt;
+  </code-block>
+  
+  <h3>Ordered lists</h3>
+  
+  <p>
+    <i>Ordered lists</i>, on the other hand, are lists where the order of the
+    content is important. These are represented as <i>numbered lists</i>.
+  </p>
+  
+  <p>
+    Ordered lists are surrounded by a <code>&lt;ol&gt;</code> opening tag and
+    a <code>&lt;/ol&gt;</code> closing tag. (Think "ol" equals "ordered list".)
+    Each list item is surrounded by a <code>&lt;li&gt;</code> opening tag and
+    <code>&lt;/li&gt;</code> closing tag, just like in unordered lists.
+  </p>
+  
+  <p>
+    Here is an example:
+  </p>
+  
+  <code-block language="html">
+&lt;p&gt;How to make apple juice:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Acquire some apples.&lt;/li&gt;
+  &lt;li&gt;Cut the skin off the apples using a paring knife.&lt;/li&gt;
+  &lt;li&gt;Cut the core out of the apples using a paring knife.&lt;/li&gt;
+  &lt;li&gt;Put the apple slices into a food processor.&lt;/li&gt;
+  &lt;li&gt;Add juice.&lt;/li&gt;
+  &lt;li&gt;Add additives and preservatives.&lt;/li&gt;
+&lt;/ol&gt;
+  </code-block>
+  
+  <h3>Headers</h3>
+  
+  <p>
+    There are six different header tags, each representing a different level
+    of heading for your content:
+  </p>
+  
+  <ul>
+    <li><code>&lt;h1&gt;&lt;/h1&gt;</code></li>
+    <li><code>&lt;h2&gt;&lt;/h2&gt;</code></li>
+    <li><code>&lt;h3&gt;&lt;/h3&gt;</code></li>
+    <li><code>&lt;h4&gt;&lt;/h4&gt;</code></li>
+    <li><code>&lt;h5&gt;&lt;/h5&gt;</code></li>
+    <li><code>&lt;h6&gt;&lt;/h6&gt;</code></li>
+  </ul>
+  
+  <p>
+    The <code>&lt;h1&gt;</code> tag represents a main-level header. h2 is a
+    subheader, and higher numbers are even deeper subheaders. Visually,
+    <code>&lt;h1&gt;</code> is biggest and <code>&lt;h6&gt;</code> is smallest.
+  </p>
+  
+  <p>
+    You can use headers to group text together, and even to put groups in a
+    larger group. In fact, we are using <code>&lt;h1&gt;</code> through
+    <code>&lt;h3&gt;</code> on this page to group all of the content together!
+  </p>
+  
+  <p>
+    Here is an example of how you can use headers to group content:
+  </p>
+  
+  <code-block language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;All About Apple Juice
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;h1&gt;Everything I Know About Apple Juice&lt;/h1&gt;
+    
+    &lt;h2&gt;Ingredients&lt;/h2&gt;
+    
+    &lt;p&gt;Key ingredients in apple juice:&lt;/p&gt;
+    
+    &lt;ul&gt;
+      &lt;li&gt;Apples&lt;/li&gt;
+      &lt;li&gt;Juice&lt;/li&gt;
+      &lt;li&gt;A bunch of preservatives and additives&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Making Apple Juice&lt;/h2&gt;
+    
+    &lt;p&gt;How to make apple juice:&lt;/p&gt;
+    
+    &lt;ol&gt;
+      &lt;li&gt;Acquire some apples.&lt;/li&gt;
+      &lt;li&gt;Cut the skin off the apples using a paring knife.&lt;/li&gt;
+      &lt;li&gt;Cut the core out of the apples using a paring knife.&lt;/li&gt;
+      &lt;li&gt;Put the apple slices into a food processor.&lt;/li&gt;
+      &lt;li&gt;Add juice.&lt;/li&gt;
+      &lt;li&gt;Add additives and preservatives.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code-block>
+  
+  <p>
+    Which would look something like this in a browser:
+  </p>
+  
+  <html-example>
+    <h1>Everything I Know About Apple Juice</h1>
+    
+    <h2>Ingredients</h2>
+    
+    <p>Key ingredients in apple juice:</p>
+    
+    <ul>
+      <li>Apples</li>
+      <li>Juice</li>
+      <li>A bunch of preservatives and additives</li>
+    </ul>
+    
+    <h2>Making Apple Juice</h2>
+    
+    <p>How to make apple juice:</p>
+    
+    <ol>
+      <li>Acquire some apples.</li>
+      <li>Cut the skin off the apples using a paring knife.</li>
+      <li>Cut the core out of the apples using a paring knife.</li>
+      <li>Put the apple slices into a food processor.</li>
+      <li>Add juice.</li>
+      <li>Add additives and preservatives.</li>
+    </ol>
+  </html-example>
 
   <h2>Linking to Different Pages</h2>
   
   <p>
     Everything we have done so far has helped us write content onto a single
-    page. While there is nothing stopping you from writing your autobiography
-    onto a single web page, it's a much better idea to separate your content
-    into multiple pages. That way, you can control how you want to present each
-    page, and you can even make suggestions to your users about what content to
-    view next, but your users have the freedom to browse your content in the
-    way that makes the most sense to them.
+    page. However, most web sites separate their content into multiple pages
+    and provide users a means of moving those pages in order to view the
+    content they are interested in.
   </p>
   
   <p>
-    That's beautiful and all, but there's no point in separating your content
-    into different pages if your users can't jump between those pages. Enter
-    <b>hyperlinks</b>, or <b>links</b> for short. HTML's greatest strength is
-    its ability to seamlessly link content pages together. This is primary done
+    In order to allow users to move from one page to another, we can use
+    <b>hyperlinks</b>, or <b>links</b> for short. We can create hyperlinks
     using the <b>anchor tag</b> (<code>&lt;a&gt;</code>).
   </p>
   
@@ -30,23 +205,19 @@
   </p>
   
   <p>
-    The first thing you might have noticed is the extra stuff in the opening
-    <code>&lt;a&gt;</code> tag. That is an <b>attribute</b>, which is used for
-    giving web browsers extra information about the element without showing it
-    directly to the user. One thing to note about attributes is that they never
-    are used in a closing tag, only in an opening tag.
+    The first thing you might have noticed is the extra text in the opening
+    <code>&lt;a&gt;</code> tag. That text is an <b>attribute</b>, which tells
+    web browsers more about <i>this particular element</i>. One thing to note
+    about attributes is that they never are used in a closing tag: they are
+    only used in an opening tag.
   </p>
   
   <p>
     In this case, the <i>href attribute</i> tells a web browser what page it
     should show the user next if the user clicks on the hyperlink. The
     <i>text</i> of a hyperlink is completely irrelevant in determining the
-    page the user sees when he or she clicks on the link.
-  </p>
-  
-  <p>
-    For example, the link below will <i>not</i> take the user to the Trustworthy
-    Bank:
+    page the user sees when he or she clicks on the link. For example, the link
+    below will <i>not</i> take the user to the Trustworthy Bank:
   </p>
   
   <code-block language="html">
@@ -64,9 +235,13 @@
   
   <p>
     We've seen that the <i>href attribute</i> of an <i>anchor tag</i> is how we
-    direct users to other pages. But how can we specify those pages? The answer
-    is we use one of three different kinds of <b>URLs</b> (uniform resource
-    locators):
+    direct users to other pages. But how can we specify those pages? We use one
+    of three different kinds of <b>URLs</b>. (URL stands for "uniform resource
+    locator" and is a way to represent a location on the World Wide Web.)
+  </p>
+
+  <p>
+    Here are the three kinds of URLs:
   </p>
   
   <ul>
@@ -81,45 +256,37 @@
       <i>path</i>. For example, if you are currently visiting
       <code>https://github.com/weegeekps</code>, a link with href of
       <code>/platinumazure</code> would take you to the
-      <code>https://github.com/platinumazure</code> page.
+      <code>https://github.com/platinumazure</code> page. Basically, everything
+      after the hostname is replaced by a virtual URL.
     </li>
     <li>
       A <b>relative URL</b> is a URL that is interpreted as <i>relative to</i>
-      the current page.
+      the current page. There are many ways to form a relative URL, and we will
+      cover a few of those later.
     </li>
   </ul>
-      
+
+  <h4>When to use each URL type?</h4>
+
   <p>
-    There are a few different flavors of relative URLs:
+    It depends on the situation.
+  </p>
+
+  <p>
+    An <i>external link</i>, which is a hyperlink going to a different website,
+    must use an absolute URL.
   </p>
   
-  <ul>
-    <li>
-      <code>../../some/other/path</code>: Go "up" two levels of the path
-      (remove the two rightmost path segments), then add the some/other/path
-      segments. <code>http://example.com/foo/bar</code> becomes
-      <code>http://example.com/some/other/path</code>.
-    </li>
-    <li>
-      <code>./somePage.html</code>: Look for "somePage.html" with the same
-      path segments as the current page (up to the last segment).
-      <code>http://example.com/foo/bar.html</code> becomes
-      <code>http://example.com/foo/somePage.html</code>.
-    </li>
-    <li>
-      <code>somePage.html</code> (with no dots or slashes prefixing): This
-      is the same as <code>./somePage.html</code>, in that it uses the path
-      segments of your current page except the last segment.
-    </li>
-  </ul>
-  
   <p>
-    Which type is the correct one to use? Well, that depends on the situation.
-    An <i>external link</i>, which is a hyperlink going to a different website,
-    must use an absolute URL. When you don't want to use an absolute URL, either
-    a virtual URL or a relative URL will work just fine (and in general, as long
-    as you don't move your website to a different hostname, it is possible to
-    convert between virtual and relative URLs interchangeably).
+    When you don't need to use an absolute URL, either a virtual URL or a
+    relative URL will work just fine. In most cases, it is possible to
+    convert between virtual and relative URLs interchangeably.
+  </p>
+
+  <h3>Hyperlink examples</h3>
+
+  <p>
+    (TODO: Add examples!)
   </p>
   
   <h2>Images</h2>
@@ -127,8 +294,8 @@
   <p>
     We can render images on our web pages using the <code>&lt;img&gt;</code>
     tag. The <code>&lt;img&gt;</code> tag requires a <code>src</code> attribute
-    (meaning source). The value of the <code>src</code> attribute is a URL,
-    meaning any of the URL types we just learned about will work here.
+    (meaning <i>source</i>). The value of the <code>src</code> attribute is a
+    URL, meaning any of the URL types we learned about earlier will work here.
   </p>
   
   <p>
@@ -149,12 +316,29 @@
 
   <h1>Exercises</h1>
 
-  <p>(TODO: Create exercise that doesn't depend on previous module)</p>
 
   <ol>
+    <li>
+      Create a complete HTML file with the following:
+      <ul>
+        <li>Page title of "My Favorite Music"</li>
+        <li>Header (<code>&lt;h1&gt;</code>) with "My Favorite Music"</li>
+        <li>
+          An introductory paragraph saying something like, "These are my top 3
+          favorite songs:"
+        </li>
+        <li>
+          An ordered list of three items, where each item contains a song name
+          and an artist name (representing a favorite song of yours)
+        </li>
+      </ul>
+    </li>
     <li>
       Modify the My Favorite Music exercise so that song titles are in
       <i>italics</i>.
     </li>
+    <li>
+      Make the artist names (from the "My Favorite Music" exercise) link to
+      their Wikipedia page.
+    </li>
   </ol>
-</template>
