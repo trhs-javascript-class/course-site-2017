@@ -3,7 +3,7 @@
 
   <h1>Final Project</h1>
 
-  <h2>Implementing Memory rules</h2>
+  <h2>Defining and Counting Moves Taken</h2>
   
   <p>
     Please follow each step completely. Use the other lessons and resources
@@ -14,5 +14,219 @@
   
   <h3>Step 1</h3>
   
-  <p>TODO: Write</p>
+  <p>
+    Now that we are revealing the Pok&eacute;mon tiles as they are clicked,
+    we need to start implementing the Memory game rules.
+  </p>
+
+  <p>
+    The Memory game rules are as follows:
+  </p>
+  
+  <ul>
+    <li>
+      The player reveals two tiles, one at a time.
+    </li>
+    <li>
+      When two tiles are revealed, we need to check that they are a match.
+      <ul>
+        <li>
+          If so, we leave both tiles face-up, add 1 to the number of matches
+          revealed by the player, and allow the player to proceed.
+        </li>
+        <li>
+          Otherwise, we flip both tiles back over and the player must choose
+          two more tiles.
+        </li>
+      </ul>
+    </li>
+    <li>
+      In either case, we also need to add 1 to the number of moves taken by
+      the player.
+    </li>
+  </ul>
+
+  <p>
+    We will start by adding the logic to increase the Moves Taken counter,
+    but only when 2 tiles are revealed.
+  </p>
+
+  <h3>Step 2</h3>
+
+  <p>
+    We need to declare two variables: <code>firstClickedTile</code> and
+    <code>secondClickedTile</code>. These values will contain the
+    Pok&eacute;mon in the first and second tile the user clicks. Since the
+    user will be clicking a lot of tiles, we need to use <code>let</code>
+    declarations.
+  </p>
+
+  <p>
+    Write those declarations inside <code>$(function () { })</code> but
+    outside any of the functions. We can set them to <code>null</code> as
+    their initial value.
+  </p>
+
+  <h3>Step 3</h3>
+
+  <p>
+    Inside the <code>onClickTile</code> function, we will add our tile
+    tracking logic to the bottom (after the Pok&eacute;mon-revealing code
+    from the previous module).
+  </p>
+
+  <p>
+    As we noted before, most of the important stuff happens after the user
+    has clicked two tiles. So what we will do is set the
+    <code>firstClickedTile</code> value on every odd tile click, and the
+    <code>secondClickedTile</code> value on every even tile click. When we
+    have values for both <code>firstClickedTile</code> and
+    <code>secondClickedTile</code>, that's when we will check for a match.
+  </p>
+
+  <p>
+    At the bottom of the <code>onClickTile</code> function, add an
+    <i>if statement</i> to see if we have not yet stored a value in
+    <code>firstClickedTile</code>. We can check for this using the
+    <b>negation operator</b>, which looks like a <code>!</code> (exclamation
+    point).
+  </p>
+
+  <p>
+    The <i>if statement</i> should look like this:
+  </p>
+
+  <code-block language="javascript">
+if (!firstClickedTile) {
+}
+  </code-block>
+
+  <p>
+    The if-statement could be read as, "if not firstClickedTile", or "if
+    firstClickedTile is empty".
+  </p>
+
+  <p>
+    Inside the <i>body</i> (curly braces) of the if statement, we will set
+    the <code>firstClickedTile</code> to be the name of the Pok&eacute;mon
+    stored in the tile.
+  </p>
+
+  <code-block language="javascript">
+firstClickedTile = $(this).data("pokemon");
+  </code-block>
+
+  <h3>Step 4</h3>
+
+  <p>
+    Now we will add an <i>else block</i> to the if statement we just created.
+    Inside the <i>else block</i>, we will put the logic for handling when the
+    user clicks on a second tile.
+  </p>
+
+  <p>
+    An if statement with an else block should look something like this:
+  </p>
+
+  <code-block language="javascript">
+if (!firstClickedTile) {
+  // Logic for when firstClickedTile has nothing in it
+} else {
+  // Logic for when firstClickedTile has something in it
+}
+  </code-block>
+
+  <p>
+    Inside the else block, we will set <code>secondClickedTile</code> to the
+    Pok&eacute;mon in the tile the user just clicked. The logic should be
+    very similar to how we assigned <code>firstClickedTile</code> in the
+    previous step.
+  </p>
+
+  <p>
+    Once you are done with these steps, use the Chrome Development Tools
+    debugger to step through the <code>onClickTile</code> function and see
+    what happens when you click on one tile, and then a second tile.
+  </p>
+
+  <h3>Step 5</h3>
+
+  <p>
+    Now we will add the code to track when a move has been completed (that
+    is, when a player has clicked on two tiles).
+  </p>
+
+  <p>
+    First, let's create another variable inside <code>$(function () { })</code>
+    but outside of the functions. We will call this variable
+    <code>movesTaken</code> and set it zero.
+  </p>
+
+  <p>
+    Inside the <i>else block</i> of the if statement in the
+    <code>onClickTile</code> function, we will update <code>movesTaken</code>
+    and then insert its value into the Moves Taken line of the page.
+  </p>
+
+  <ul>
+    <li>
+      Increment <code>movesTaken</code> by 1.
+    </li>
+    <li>
+      Then, create a jQuery object via ID selector, using the ID we already
+      used in the HTML page. Then use the <code>.text()</code> function to
+      set that element's text to <code>movesTaken</code>.
+    </li>
+  </ul>
+
+  <p>
+    <a href="https://api.jquery.com/text/#text2">
+      jQuery <code>.text</code> function
+    </a>
+  </p>
+
+  <h3>Step 6</h3>
+
+  <p>
+    We're almost done. Now we need to make it so that a user can do more than
+    one move. To do that, we will clear out the <code>firstClickedTile</code>
+    and <code>secondClickedTile</code> variables after we have tracked the
+    user's move.
+  </p>
+
+  <p>
+    After incrementing the <code>movesTaken</code> counter and displaying it,
+    set the <code>firstClickedTile</code> and <code>secondClickedTile</code>
+    variables to <code>null</code>, still within the else block of the if
+    statement.
+  </p>
+
+  <h3>Step 7</h3>
+
+  <p>
+    If everything up to this point has gone well, then every tile click should
+    now alternate between two code paths:
+  </p>
+  
+  <ul>
+    <li>
+      First, we set <code>firstClickedTile</code> to the clicked tile and do
+      nothing else.
+    </li>
+    <li>
+      Then, we set <code>secondClickedTile</code>, update and display
+      <code>movesTaken</code>, and finally set <code>firstClickedTile</code>
+      and <code>secondClickedTile</code> to null.
+    </li>
+  </ul>
+
+  <p>
+    Use the Chrome Development Tools debugger to confirm that this is what is
+    happening.
+  </p>
+
+  <p>
+    Once you have finished, please raise your hand so either Kevin or Adam can
+    check your work.
+  </p>
 </template>

@@ -36,7 +36,7 @@ export class FinalProjectIndex {
       route: 'memory-rules',
       name: 'memory-rules',
       moduleId: 'resources/final-project/module-6',
-      title: '6. Implementing Memory rules',
+      title: '6. Defining and Counting Moves Taken',
       nav: true
     }]);
   }
