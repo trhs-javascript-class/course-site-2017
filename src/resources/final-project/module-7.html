@@ -90,9 +90,121 @@ if (checkMatch()) {
     different Pok&eacute;mon.
   </p>
 
+  <p>
+    <i><b>Extra challenge:</b></i> Can you think of a way to shorten the code
+    in the <code>checkMatch()</code> function? (Hint: What kind of values does
+    the <code>===</code> operator actually return?)
+  </p>
+
   <h3>Step 3</h3>
 
   <p>
-    TODO: Write!
+    Now that we have a working <code>checkMatch()</code> function, we need to
+    look at its return value to know if the user clicked matching tiles and then
+    update the state of the game accordingly. First, we will update the Matches
+    Found counter if the user found a match. This process will be very similar
+    to when we updated the Moves Taken counter last lesson.
+  </p>
+
+  <p>
+    Here are the steps to follow this time. See if you can do these steps
+    on your own (but do reach out to your classmates or Adam/Kevin if you need
+    help):
+  </p>
+
+  <ul>
+    <li>
+      Create a variable <code>matchesFound</code> with initial value of
+      <code>0</code>.
+    </li>
+    <li>
+      Inside the <code>if (checkMatch())</code> statement,
+      <ul>
+        <li>Increase the <code>matchesFound</code> variable; then</li>
+        <li>
+          Create a jQuery object using an ID representing the element to
+          update, and
+        </li>
+        <li>
+          Update the text of that element to the value of
+          <code>matchesFound</code>.
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>
+    Save your changes and test this out. The "Matches Found" counter should
+    update whenever you click on two of the same tile.
+  </p>
+
+  <h3>Step 4</h3>
+
+  <p>
+    Now we need to turn over the revealed tiles again when we don't have a
+    match.
+  </p>
+
+  <p>
+    First, let's create an <i>else clause</i> in the if-statement we have been
+    working in:
+  </p>
+
+  <code-block>
+if (checkMatch()) {
+    // Stuff we just added earlier :-)
+} else {
+}
+  </code-block>
+
+  <p>
+    Inside the else clause, we need to hide the tiles that were revealed by the
+    user's clicks. We can do this using a class selector, since we always add
+    a certain class earlier in the <code>onClickTile</code> function.
+  </p>
+
+  <p>
+    See if you can figure out what class we should use. (We even used the name
+    in the previous paragraph, if that helps!)
+  </p>
+
+  <code-block>
+const $clickedTiles = $(".someclass");   // What class should we use?
+  </code-block>
+
+  <p>
+    Once you have the clicked tiles, we can use jQuery's
+    <code>.removeClass()</code> method to remove the classes we added earlier.
+  </p>
+
+  <code-block>
+$clickedTiles.removeClass("revealed");
+$clickedTiles.removeClass(/* wait, how do we know which Pok&eacute;mon to remove?
+  </code-block>
+
+  <p>
+    We don't know which Pok&eacute;mon name to remove from the tile's classes...
+    Well, why not remove them all?
+  </p>
+
+  <code-block>
+$clickedTiles.removeClass("blastoise charizard dragonite gengar magikarp mew pikachu venusaur");
+  </code-block>
+
+  <p>
+    Don't worry, jQuery is smart enough to only remove classes that are actually
+    on the element.
+  </p>
+
+  <p>
+    At this point, you should be able to reveal matches, and when you don't get
+    a match, the tiles flip back over. There's just one major problem... which
+    we will address next module! (Not very nice of us to have a cliffhanger
+    ending to this module, but that's how it goes!)
+  </p>
+
+  <p>
+    Once you have finished, please raise your hand so either Kevin or Adam can
+    check your work. (And show us the bugs you have found!)
   </p>
 </template>
