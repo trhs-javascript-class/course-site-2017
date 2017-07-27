@@ -33,10 +33,22 @@ export class FinalProjectIndex {
       title: '5. Clicking on Tiles',
       nav: true
     }, {
-      route: 'memory-rules',
-      name: 'memory-rules',
+      route: 'moves-taken',
+      name: 'moves-taken',
       moduleId: 'resources/final-project/module-6',
-      title: '6. Implementing Memory rules',
+      title: '6. Defining and Counting Moves Taken',
+      nav: true
+    }, {
+      route: 'checking-matches',
+      name: 'checking-matches',
+      moduleId: 'resources/final-project/module-7',
+      title: '7. Checking for Matches',
+      nav: true
+    }, {
+      route: 'bugfixes-final-touches',
+      name: 'bugfixes-final-touches',
+      moduleId: 'resources/final-project/module-8',
+      title: '8. Bug Fixes and Final Touches',
       nav: true
     }]);
   }

@@ -1,0 +1,281 @@
+<template>
+  <require from="resources/shared/code-block"></require>
+
+  <h1>Final Project</h1>
+
+  <h2>Checking for Matches</h2>
+  
+  <p>
+    Please follow each step completely. Use the other lessons and resources
+    (Mozilla Developer Network) to help you. You may also get help from your
+    classmates. Kevin and Adam will be able to help, so if you get stuck,
+    raise your hand to let them know.
+  </p>
+  
+  <h3>Step 1</h3>
+  
+  <p>
+    Now that we have gotten the "moves taken" counter working, we need to write
+    the code to check for matches.
+  </p>
+  
+  <p>
+    Just like the code for "moves taken", most of the logic for checking a match
+    needs to be run when the user clicks on the second tile in a pair. So we
+    will be adding our logic in the same area of the code. However, the
+    <code>onTileClick</code> function is starting to get a little long, so we
+    want to try to write some of our code in a separate function.
+  </p>
+  
+  <p>
+    What we're going to do is write logic for actually checking if we have a
+    match inside the <code>checkMatch</code> function. Then the
+    <code>onTileClick</code> function will call that function to see if the user
+    has revealed a match, and proceed from there.
+  </p>
+  
+  <p>
+    Start by adding an <i>if statement</i> to the <code>onTileClick</code>
+    function. This should be done after we have given a value to
+    <code>firstClickedTile</code> and <code>secondClickedTile</code>, but before
+    updating the <code>movesTaken</code> counter.
+  </p>
+  
+  <p>
+    The if statement should look something like this:
+  </p>
+  
+  <code-block language="javascript">
+if (checkMatch()) {
+}
+  </code-block>
+  
+  <h3>Step 2</h3>
+  
+  <p>
+    As it turns out, the code for checking a match is pretty simple. All of the
+    information we need is in the <code>firstClickedTile</code> and
+    <code>secondClickedTile</code> variables.
+  </p>
+  
+  <p>
+    In fact, all we need to do is check that the values are the same. For
+    example, if <code>firstClickedTile</code> is <code>"venusaur"</code>, and
+    <code>secondClickedTile</code> is also <code>"venusaur"</code>, then we
+    know the user clicked on two Venusaur tiles just now.
+  </p>
+
+  <p>
+    We will be using the <i>strict equals operator</i> (<code>===</code>) to
+    check that the two variables are equal to each other. If they are, we will
+    <i>return</i> <code>true</code> from the <code>checkMatch()</code> function,
+    so that <code>onClickTile()</code> will know the user chose matching tiles.
+    Otherwise, we will return <code>false</code> from <code>checkMatch()</code>,
+    and <code>onClickTile()</code> will know that the user did not choose
+    matching tiles.
+  </p>
+
+  <p>
+    Inside <code>checkMatch()</code>, try to create an <i>if/else statement</i>
+    that checks that <code>firstClickedTile</code> equals
+    <code>secondClickedTile</code>, returns true if they are equal, and returns
+    false if they are not equal.
+  </p>
+
+  <p>
+    Use the Chrome Developer Tools debugger to step through your
+    <code>checkMatch()</code> function. Make sure it is only called on every
+    other tile click, and make sure it returns true if you click on two tiles
+    with the same Pok&eacute;mon and false if you click on two tiles with
+    different Pok&eacute;mon.
+  </p>
+
+  <p>
+    <i><b>Extra challenge:</b></i> Can you think of a way to shorten the code
+    in the <code>checkMatch()</code> function? (Hint: What kind of values does
+    the <code>===</code> operator actually return?)
+  </p>
+
+  <h3>Step 3</h3>
+
+  <p>
+    Now that we have a working <code>checkMatch()</code> function, we need to
+    look at its return value to know if the user clicked matching tiles and then
+    update the state of the game accordingly. First, we will update the Matches
+    Found counter if the user found a match. This process will be very similar
+    to when we updated the Moves Taken counter last lesson.
+  </p>
+
+  <p>
+    Here are the steps to follow this time. See if you can do these steps
+    on your own (but do reach out to your classmates or Adam/Kevin if you need
+    help):
+  </p>
+
+  <ul>
+    <li>
+      Create a variable <code>pairsFound</code> with initial value of
+      <code>0</code>.
+    </li>
+    <li>
+      Inside the <code>if (checkMatch())</code> statement,
+      <ul>
+        <li>Increase the <code>pairsFound</code> variable; then</li>
+        <li>
+          Create a jQuery object using an ID representing the element to
+          update, and
+        </li>
+        <li>
+          Update the text of that element to the value of
+          <code>pairsFound</code>.
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>
+    Save your changes and test this out. The "Matches Found" counter should
+    update whenever you click on two of the same tile.
+  </p>
+
+  <h3>Step 4</h3>
+
+  <p>
+    Now we need to turn over the revealed tiles again when we don't have a
+    match.
+  </p>
+
+  <p>
+    First, let's create an <i>else clause</i> in the if-statement we have been
+    working in:
+  </p>
+
+  <code-block language="javascript">
+if (checkMatch()) {
+    // Stuff we just added earlier :-)
+} else {
+}
+  </code-block>
+
+  <p>
+    Inside the else clause, we need to hide the tiles that were revealed by the
+    user's clicks. But since this function is already getting complicated, we
+    will use the <code>hideClickedTiles</code> function to store this code.
+  </p>
+  
+  <p>
+    Add a call to <code>hideClickedTiles()</code> in the else clause, where we
+    know that the user did not find a match.
+  </p>
+
+  <h3>Step 5</h3>
+  
+  <p>
+    Inside the <code>hideClickedTiles()</code> function, we need to find the
+    tiles the user had just revealed, so we can then hide the Pok&eacute;mon
+    within them. We can do this using a class selector, since we always add
+    a certain class to the clicked tiles in the <code>onClickTile</code>
+    function.
+  </p>
+
+  <p>
+    See if you can figure out what class we should use. (We even used the name
+    in the previous paragraph, if that helps!)
+  </p>
+
+  <code-block language="javascript">
+const $clickedTiles = $(".someclass");   // What class should we use?
+  </code-block>
+
+  <p>
+    Once you have the clicked tiles, we can use jQuery's
+    <code>.removeClass()</code> method to remove the classes we added earlier.
+  </p>
+
+  <code-block language="javascript">
+$clickedTiles.removeClass("revealed");
+$clickedTiles.removeClass(/* wait, how do we know which Pok&eacute;mon to remove? */);
+  </code-block>
+
+  <p>
+    We don't know which Pok&eacute;mon name to remove from the tile's classes...
+    Well, why not remove them all?
+  </p>
+
+  <code-block language="javascript">
+$clickedTiles.removeClass("blastoise charizard dragonite gengar magikarp mew pikachu venusaur");
+  </code-block>
+
+  <p>
+    Don't worry, jQuery is smart enough to only remove classes that are actually
+    on the element.
+  </p>
+
+  <h3>Step 6</h3>
+
+  <p>
+    As you have probably noticed, when you click on a second tile, you can't
+    see what it is! This is because we are flipping the tiles back over right
+    away after we know the user didn't find a pair. Unfortunately, computers
+    are a lot faster than our eyes!
+  </p>
+
+  <p>
+    We will be using a <b>timeout</b> to get around this problem. In JavaScript,
+    a timeout is set up using a function called <b>setTimeout</b>. After a
+    certain amount of time has passed, JavaScript will execute code, without
+    user input. In our case, we will use <b>setTimeout</b> to add a delay to
+    our code before we hide the clicked tiles.
+  </p>
+
+  <p>
+    We're already halfway there since we used a separate function,
+    <code>hideClickedTiles</code>. All we need to do is replace our normal
+    function call, <code>hideClickedTiles()</code>, with a timeout:
+  </p>
+
+  <code-block language="javascript">
+setTimeout(hideClickedTiles, 1000);
+  </code-block>
+
+  <p>
+    The second <i>argument</i> to the function is the timeout delay, in
+    milliseconds. In other words, it's how long we want to wait before
+    <code>hideClickedTiles</code> is executed. In our case, 1000 means one
+    thousand milliseconds, or one second.
+  </p>
+
+  <p>
+    <i><b>Important:</b></i> Do not add parentheses to
+    <code>hideClickedTiles</code> in this <code>setTimeout</code> call! This
+    is because if we use parentheses, we'll call <code>hideClickedTiles</code>
+    normally (that is, instantly, rather than after a timeout). Instead, we
+    are simply giving <code>setTimeout</code> the name of the function we want
+    it to call later, and then <code>setTimeout</code> will call the function
+    in its own code.
+  </p>
+
+  <p>
+    Try playing around with the timeout delay. What happens if you use a lower
+    number, like 500? What if you use a higher number, like 2000?
+  </p>
+
+  <h3>Step 7</h3>
+
+  <p>
+    TODO: Write! (About how to ensure only the most recently clicked tiles are
+    hidden, instead of all previously revealed tiles)
+  </p>
+
+  <h3>Step 8</h3>
+
+  <p>
+    At this point, you should be able to reveal matches, and when you don't get
+    a match, the tiles flip back over.
+  </p>
+
+  <p>
+    Once you have finished, please raise your hand so either Kevin or Adam can
+    check your work. (And show us the bugs you have found!)
+  </p>
+</template>
