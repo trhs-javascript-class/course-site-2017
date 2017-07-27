@@ -37,7 +37,7 @@
   <p>
     Start by adding an <i>if statement</i> to the <code>onTileClick</code>
     function. This should be done after we have given a value to
-    <code>firstTileClicked</code> and <code>secondTileClicked</code>, but before
+    <code>firstClickedTile</code> and <code>secondClickedTile</code>, but before
     updating the <code>movesTaken</code> counter.
   </p>
   
@@ -54,14 +54,14 @@ if (checkMatch()) {
   
   <p>
     As it turns out, the code for checking a match is pretty simple. All of the
-    information we need is in the <code>firstTileClicked</code> and
-    <code>secondTileClicked</code> variables.
+    information we need is in the <code>firstClickedTile</code> and
+    <code>secondClickedTile</code> variables.
   </p>
   
   <p>
     In fact, all we need to do is check that the values are the same. For
-    example, if <code>firstTileClicked</code> is <code>"venusaur"</code>, and
-    <code>secondTileClicked</code> is also <code>"venusaur"</code>, then we
+    example, if <code>firstClickedTile</code> is <code>"venusaur"</code>, and
+    <code>secondClickedTile</code> is also <code>"venusaur"</code>, then we
     know the user clicked on two Venusaur tiles just now.
   </p>
 
@@ -77,8 +77,8 @@ if (checkMatch()) {
 
   <p>
     Inside <code>checkMatch()</code>, try to create an <i>if/else statement</i>
-    that checks that <code>firstTileClicked</code> equals
-    <code>secondTileClicked</code>, returns true if they are equal, and returns
+    that checks that <code>firstClickedTile</code> equals
+    <code>secondClickedTile</code>, returns true if they are equal, and returns
     false if they are not equal.
   </p>
 
