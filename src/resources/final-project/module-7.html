@@ -45,7 +45,7 @@
     The if statement should look something like this:
   </p>
   
-  <code-block>
+  <code-block language="javascript">
 if (checkMatch()) {
 }
   </code-block>
@@ -114,20 +114,20 @@ if (checkMatch()) {
 
   <ul>
     <li>
-      Create a variable <code>matchesFound</code> with initial value of
+      Create a variable <code>pairsFound</code> with initial value of
       <code>0</code>.
     </li>
     <li>
       Inside the <code>if (checkMatch())</code> statement,
       <ul>
-        <li>Increase the <code>matchesFound</code> variable; then</li>
+        <li>Increase the <code>pairsFound</code> variable; then</li>
         <li>
           Create a jQuery object using an ID representing the element to
           update, and
         </li>
         <li>
           Update the text of that element to the value of
-          <code>matchesFound</code>.
+          <code>pairsFound</code>.
         </li>
       </ul>
     </li>
@@ -150,7 +150,7 @@ if (checkMatch()) {
     working in:
   </p>
 
-  <code-block>
+  <code-block language="javascript">
 if (checkMatch()) {
     // Stuff we just added earlier :-)
 } else {
@@ -168,7 +168,7 @@ if (checkMatch()) {
     in the previous paragraph, if that helps!)
   </p>
 
-  <code-block>
+  <code-block language="javascript">
 const $clickedTiles = $(".someclass");   // What class should we use?
   </code-block>
 
@@ -177,9 +177,9 @@ const $clickedTiles = $(".someclass");   // What class should we use?
     <code>.removeClass()</code> method to remove the classes we added earlier.
   </p>
 
-  <code-block>
+  <code-block language="javascript">
 $clickedTiles.removeClass("revealed");
-$clickedTiles.removeClass(/* wait, how do we know which Pok&eacute;mon to remove?
+$clickedTiles.removeClass(/* wait, how do we know which Pok&eacute;mon to remove? */);
   </code-block>
 
   <p>
@@ -187,7 +187,7 @@ $clickedTiles.removeClass(/* wait, how do we know which Pok&eacute;mon to remove
     Well, why not remove them all?
   </p>
 
-  <code-block>
+  <code-block language="javascript">
 $clickedTiles.removeClass("blastoise charizard dragonite gengar magikarp mew pikachu venusaur");
   </code-block>
 
