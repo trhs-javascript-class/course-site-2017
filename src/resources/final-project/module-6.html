@@ -188,10 +188,12 @@ if (!firstClickedTile) {
   <h3>Step 5</h3>
 
   <p>
-    We're almost done. Now we need to make it so that a user can do more than
-    one move. To do that, we will clear out the <code>firstClickedTile</code>
-    and <code>secondClickedTile</code> variables after we have tracked the
-    user's move.
+    We're almost done, but we have a problem. Every tile we click after the
+    first tile is assumed to be a "second tile", so the Moves Taken counter is
+    incremented too quickly. To fix this, we will clear out the
+    <code>firstClickedTile</code> and <code>secondClickedTile</code> variables
+    after we have tracked the user's move, so the game understands that we are
+    now on the first tile of the next move.
   </p>
 
   <p>
