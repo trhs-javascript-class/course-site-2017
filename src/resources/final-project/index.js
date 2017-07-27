@@ -44,6 +44,12 @@ export class FinalProjectIndex {
       moduleId: 'resources/final-project/module-7',
       title: '7. Checking for Matches',
       nav: true
+    }, {
+      route: 'bugfixes-final-touches',
+      name: 'bugfixes-final-touches',
+      moduleId: 'resources/final-project/module-8',
+      title: '8. Bug Fixes and Final Touches',
+      nav: true
     }]);
   }
 }
