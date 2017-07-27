@@ -53,6 +53,46 @@ if (checkMatch()) {
   <h3>Step 2</h3>
   
   <p>
+    As it turns out, the code for checking a match is pretty simple. All of the
+    information we need is in the <code>firstTileClicked</code> and
+    <code>secondTileClicked</code> variables.
+  </p>
+  
+  <p>
+    In fact, all we need to do is check that the values are the same. For
+    example, if <code>firstTileClicked</code> is <code>"venusaur"</code>, and
+    <code>secondTileClicked</code> is also <code>"venusaur"</code>, then we
+    know the user clicked on two Venusaur tiles just now.
+  </p>
+
+  <p>
+    We will be using the <i>strict equals operator</i> (<code>===</code>) to
+    check that the two variables are equal to each other. If they are, we will
+    <i>return</i> <code>true</code> from the <code>checkMatch()</code> function,
+    so that <code>onClickTile()</code> will know the user chose matching tiles.
+    Otherwise, we will return <code>false</code> from <code>checkMatch()</code>,
+    and <code>onClickTile()</code> will know that the user did not choose
+    matching tiles.
+  </p>
+
+  <p>
+    Inside <code>checkMatch()</code>, try to create an <i>if/else statement</i>
+    that checks that <code>firstTileClicked</code> equals
+    <code>secondTileClicked</code>, returns true if they are equal, and returns
+    false if they are not equal.
+  </p>
+
+  <p>
+    Use the Chrome Developer Tools debugger to step through your
+    <code>checkMatch()</code> function. Make sure it is only called on every
+    other tile click, and make sure it returns true if you click on two tiles
+    with the same Pok&eacute;mon and false if you click on two tiles with
+    different Pok&eacute;mon.
+  </p>
+
+  <h3>Step 3</h3>
+
+  <p>
     TODO: Write!
   </p>
 </template>
