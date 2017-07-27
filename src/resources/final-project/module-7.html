@@ -159,8 +159,23 @@ if (checkMatch()) {
 
   <p>
     Inside the else clause, we need to hide the tiles that were revealed by the
-    user's clicks. We can do this using a class selector, since we always add
-    a certain class earlier in the <code>onClickTile</code> function.
+    user's clicks. But since this function is already getting complicated, we
+    will use the <code>hideClickedTiles</code> function to store this code.
+  </p>
+  
+  <p>
+    Add a call to <code>hideClickedTiles()</code> in the else clause, where we
+    know that the user did not find a match.
+  </p>
+
+  <h3>Step 5</h3>
+  
+  <p>
+    Inside the <code>hideClickedTiles()</code> function, we need to find the
+    tiles the user had just revealed, so we can then hide the Pok&eacute;mon
+    within them. We can do this using a class selector, since we always add
+    a certain class to the clicked tiles in the <code>onClickTile</code>
+    function.
   </p>
 
   <p>
@@ -196,11 +211,67 @@ $clickedTiles.removeClass("blastoise charizard dragonite gengar magikarp mew pik
     on the element.
   </p>
 
+  <h3>Step 6</h3>
+
+  <p>
+    As you have probably noticed, when you click on a second tile, you can't
+    see what it is! This is because we are flipping the tiles back over right
+    away after we know the user didn't find a pair. Unfortunately, computers
+    are a lot faster than our eyes!
+  </p>
+
+  <p>
+    We will be using a <b>timeout</b> to get around this problem. In JavaScript,
+    a timeout is set up using a function called <b>setTimeout</b>. After a
+    certain amount of time has passed, JavaScript will execute code, without
+    user input. In our case, we will use <b>setTimeout</b> to add a delay to
+    our code before we hide the clicked tiles.
+  </p>
+
+  <p>
+    We're already halfway there since we used a separate function,
+    <code>hideClickedTiles</code>. All we need to do is replace our normal
+    function call, <code>hideClickedTiles()</code>, with a timeout:
+  </p>
+
+  <code-block language="javascript">
+setTimeout(hideClickedTiles, 1000);
+  </code-block>
+
+  <p>
+    The second <i>argument</i> to the function is the timeout delay, in
+    milliseconds. In other words, it's how long we want to wait before
+    <code>hideClickedTiles</code> is executed. In our case, 1000 means one
+    thousand milliseconds, or one second.
+  </p>
+
+  <p>
+    <i><b>Important:</b></i> Do not add parentheses to
+    <code>hideClickedTiles</code> in this <code>setTimeout</code> call! This
+    is because if we use parentheses, we'll call <code>hideClickedTiles</code>
+    normally (that is, instantly, rather than after a timeout). Instead, we
+    are simply giving <code>setTimeout</code> the name of the function we want
+    it to call later, and then <code>setTimeout</code> will call the function
+    in its own code.
+  </p>
+
+  <p>
+    Try playing around with the timeout delay. What happens if you use a lower
+    number, like 500? What if you use a higher number, like 2000?
+  </p>
+
+  <h3>Step 7</h3>
+
+  <p>
+    TODO: Write! (About how to ensure only the most recently clicked tiles are
+    hidden, instead of all previously revealed tiles)
+  </p>
+
+  <h3>Step 8</h3>
+
   <p>
     At this point, you should be able to reveal matches, and when you don't get
-    a match, the tiles flip back over. There's just one major problem... which
-    we will address next module! (Not very nice of us to have a cliffhanger
-    ending to this module, but that's how it goes!)
+    a match, the tiles flip back over.
   </p>
 
   <p>
