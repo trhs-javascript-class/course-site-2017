@@ -15,46 +15,46 @@ export class LessonsIndex {
       title: '2. Variables & Conditionals',
       nav: true
     }, {
+      route: 'arrays',
+      name: 'arrays',
+      moduleId: 'resources/lessons/arrays',
+      title: '3. Arrays',
+      nav: true
+    }, {
       route: 'loops',
       name: 'loops',
       moduleId: 'resources/lessons/loops',
-      title: '3. Loops',
+      title: '4. Loops',
       nav: true
     }, {
       route: 'functions',
       name: 'functions',
       moduleId: 'resources/lessons/functions',
-      title: '4. Functions',
+      title: '5. Functions',
       nav: true
     }, {
       route: 'html-basics',
       name: 'html-basics',
       moduleId: 'resources/lessons/html-basics',
-      title: '5. HTML Basics',
+      title: '6. HTML Basics',
       nav: true
     }, {
       route: 'html-more',
       name: 'html-more',
       moduleId: 'resources/lessons/html-more',
-      title: '6. More HTML',
+      title: '7. More HTML',
       nav: true
     }, {
       route: 'css-and-selectors',
       name: 'css-and-selectors',
       moduleId: 'resources/lessons/css-and-selectors',
-      title: '7. CSS and Selectors',
+      title: '8. CSS and Selectors',
       nav: true
     }, {
       route: 'jquery',
       name: 'jquery',
       moduleId: 'resources/lessons/jquery',
-      title: '8. Using jQuery',
-      nav: true
-    }, {
-      route: 'clock-project',
-      name: 'clock-project',
-      moduleId: 'resources/lessons/clock-project',
-      title: '9. Clock Project',
+      title: '9. Using jQuery',
       nav: true
     }]);
   }
