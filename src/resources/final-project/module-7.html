@@ -263,19 +263,50 @@ setTimeout(hideClickedTiles, 1000);
   <h3>Step 7</h3>
 
   <p>
-    TODO: Write! (About how to ensure only the most recently clicked tiles are
-    hidden, instead of all previously revealed tiles)
+    Now we need to fix the fact that previously revealed tiles are also flipped
+    back over if the user clicks non-matching tiles afterwards.
+  </p>
+
+  <p>
+    In this case, our problem is that one CSS class ("revealed") is really being
+    used for two purposes: Showing previously matched tiles, and showing clicked
+    tiles. So we can make this work by using another CSS class. We'll use a
+    "clicked" CSS class to show tiles that have just been clicked. That way,
+    "revealed" will just be a class meaning we want the tile to be visible.
+  </p>
+
+  <p>
+    We need to make three changes to make this work:
+  </p>
+
+  <ul>
+    <li>
+      First, change the beginning of the <code>onClickTile</code> function to
+      add a "clicked" class, as well as "revealed" and the Pok&eacute;mon name.
+    </li>
+    <li>
+      Then, go to the area of code where we are hiding the tiles after a
+      non-matching move. Instead of hiding all of the revealed tiles, hide the
+      clicked tiles. Make sure to also remove the "clicked" class from those
+      tiles.
+    </li>
+    <li>
+      Finally, we need to update the "match found" logic. In this case, we want
+      to leave those tiles revealed, but removed the "clicked" class from them
+      so they aren't hidden later.
+    </li>
   </p>
 
   <h3>Step 8</h3>
 
   <p>
     At this point, you should be able to reveal matches, and when you don't get
-    a match, the tiles flip back over.
+    a match, the tiles flip back over. Previously revealed matches should stay
+    visible without being flipped over.
   </p>
 
   <p>
     Once you have finished, please raise your hand so either Kevin or Adam can
-    check your work. (And show us the bugs you have found!)
+    check your work.
   </p>
 </template>
