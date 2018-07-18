@@ -7,346 +7,298 @@
   <h2>Introduction</h2>
 
   <p>
-    <b>CSS</b> stands for <b>Cascading Style Sheets</b>. We use CSS in order to
-    change the <i>presentation</i> of our content.
+    <b>CSS</b> stands for
+    <b>Cascading Style Sheets</b>. We use CSS in order to change the
+    <i>presentation</i> of our content.
   </p>
-  
+
   <p>
-    In this way, HTML, CSS, and JavaScript focus on different aspects of a web
-    site:
+    In this way, HTML, CSS, and JavaScript focus on different aspects of a web site:
   </p>
 
   <ul>
     <li>
-      HTML contains the <i>content</i> of a web page.
+      HTML contains the
+      <i>content</i> of a web page.
     </li>
     <li>
-      CSS describes the <i>presentation and style</i> of a web page.
+      CSS describes the
+      <i>presentation and style</i> of a web page.
     </li>
     <li>
-      JavaScript focuses on the <i>behavior and interaction</i> of a web page.
+      JavaScript focuses on the
+      <i>behavior and interaction</i> of a web page.
     </li>
   </ul>
 
   <h2>Using CSS to Style Your Content</h2>
-  
+
   <p>
-    Before we talk about how to actually style our pages through CSS, we need to
-    talk about where we can define our style information.
+    Before we talk about how to actually style our pages through CSS, we need to talk about where we can define our style information.
   </p>
-  
+
   <p>
     There are three locations for styles:
   </p>
-  
+
   <ul>
     <li>Inline styles</li>
     <li>Embedded styles</li>
     <li>External styles</li>
   </ul>
-  
+
   <h3>Inline Styles</h3>
-  
+
   <p>
-    <b>Inline styles</b> are styles that are applied to individual HTML
-    elements. We can use the <code>style</code> attribute on any element to
-    style just that element.
+    <b>Inline styles</b> are styles that are applied to individual HTML elements. We can use the
+    <code>style</code> attribute on any element to style just that element.
   </p>
-  
+
   <p>
     Here's an example of an inline style:
   </p>
-  
+
   <code-block language="html">
-&lt;p style="color: red"&gt;The text in this paragraph is red.&lt;/p&gt;
+    &lt;p style="color: red"&gt;The text in this paragraph is red.&lt;/p&gt;
   </code-block>
 
   <p>
-    Inline styles work really well for making individual elements stand out.
-    However, if we want all of our paragraphs to have red text, this will
-    get inconvenient very quickly.
+    Inline styles work really well for making individual elements stand out. However, if we want all of our paragraphs to have
+    red text, this will get inconvenient very quickly.
   </p>
-  
+
   <h3>Embedded Styles</h3>
-  
+
   <p>
-    <b>Embedded styles</b> are great for applying the same style to multiple,
-    similar HTML elements. For example, let's say we want to make all paragraphs
-    have red text. Embedded styles allow you to do just that.
+    <b>Embedded styles</b> are great for applying the same style to multiple, similar HTML elements. For example, let's say
+    we want to make all paragraphs have red text. Embedded styles allow you to do just that.
   </p>
-  
+
   <p>
-    Embedded styles are put onto the page using a <code>&lt;style&gt;</code>
-    tag. (Note: This is distinct from the <code>style</code> <i>attribute</i>
+    Embedded styles are put onto the page using a
+    <code>&lt;style&gt;</code> tag. (Note: This is distinct from the
+    <code>style</code>
+    <i>attribute</i>
     that we use for inline styles on HTML elements.)
   </p>
-  
+
   <p>
-    When writing embedded styles using a <code>&lt;style&gt;</code> tag, we use
-    a <code>type</code> attribute to tell the browser we are using CSS as our
-    styling language. Then we can write our styles using <b>CSS rules</b>.
-    We will go through how to write CSS rules in a little bit.
+    When writing embedded styles using a
+    <code>&lt;style&gt;</code> tag, we use a
+    <code>type</code> attribute to tell the browser we are using CSS as our styling language. Then we can write our styles using
+    <b>CSS rules</b>. We will go through how to write CSS rules in a little bit.
   </p>
-  
+
   <p>
     Here is an example of a CSS rule in an embedded style sheet:
   </p>
-  
+
   <code-block language="html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;style type="text/css"&gt;
-      p {
-        color: red;
-      }
-    &lt;/style&gt;
-  &lt;/head&gt;
-  
-  &lt;body&gt;
-    &lt;p&gt;
-      Wow! This paragraph will have red text, without having to write a color
-      inside the HTML.
-    &lt;/p&gt;
-    
-    &lt;p&gt;
-      And so will this paragraph!
-    &lt;/p&gt;
-    
-    &lt;p&gt;
-      And this one!
-    &lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
+    &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;style type="text/css"&gt; p { color: red; } &lt;/style&gt; &lt;/head&gt;
+    &lt;body&gt; &lt;p&gt; Wow! This paragraph will have red text, without having to write a color inside the HTML. &lt;/p&gt;
+    &lt;p&gt; And so will this paragraph! &lt;/p&gt; &lt;p&gt; And this one! &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;
   </code-block>
 
   <h3>External Styles</h3>
-  
+
   <p>
-    Embedded style sheets provide a consistent set of styles across a page.
-    When you want to use the same styles on multiple pages across an entire
-    website, though, <b>external styles</b> are the way to go.
+    Embedded style sheets provide a consistent set of styles across a page. When you want to use the same styles on multiple
+    pages across an entire website, though,
+    <b>external styles</b> are the way to go.
   </p>
-  
+
   <p>
-    External styles are very similar to embedded styles. The only difference is
-    where the style rules are located. For external styles, we write our style
-    rules in a <code>.css</code> file and then pull the file into our HTML pages
-    using a <code>&lt;link&gt;</code> tag.
+    External styles are very similar to embedded styles. The only difference is where the style rules are located. For external
+    styles, we write our style rules in a
+    <code>.css</code> file and then pull the file into our HTML pages using a
+    <code>&lt;link&gt;</code> tag.
   </p>
-  
+
   <p>
-    Be careful: We use the &lt;a&gt; or <i>anchor</i> tag for creating
-    hyperlinks. The <code>&lt;link&gt;</code> tag is for pulling two resources
-    together: in this case, an HTML document and an external CSS file.)
+    Be careful: We use the &lt;a&gt; or
+    <i>anchor</i> tag for creating hyperlinks. The
+    <code>&lt;link&gt;</code> tag is for pulling two resources together: in this case, an HTML document and an external CSS file.)
   </p>
-  
+
   <p>
     Here is how the above example would look using external styles:
   </p>
-  
-  <code-block language="css">
-/* This is the CSS file. (This line is a comment, which doesn't do anything.) */
 
-p {
-  color: red;
-}
+  <code-block language="css">
+    /* This is the CSS file. (This line is a comment, which doesn't do anything.) */ p { color: red; }
   </code-block>
-  
+
   <code-block language="html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;link rel="stylesheet" href="myStyles.css" type="text/css" /&gt;
-  &lt;/head&gt;
-  
-  &lt;body&gt;
-    &lt;p&gt;
-      Wow! This paragraph will have red text, without having to write a color
-      inside the HTML.
-    &lt;/p&gt;
-    
-    &lt;p&gt;
-      And so will this paragraph!
-    &lt;/p&gt;
-    
-    &lt;p&gt;
-      And this one!
-    &lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
+    &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;link rel="stylesheet" href="myStyles.css" type="text/css" /&gt; &lt;/head&gt;
+    &lt;body&gt; &lt;p&gt; Wow! This paragraph will have red text, without having to write a color inside the HTML. &lt;/p&gt;
+    &lt;p&gt; And so will this paragraph! &lt;/p&gt; &lt;p&gt; And this one! &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;
   </code-block>
-  
+
   <p>
-    Most of the time, external styles are the best way to do things. CSS files
-    can be pulled in easily from HTML pages, and they help ensure consistent
-    styles across your website.
+    Most of the time, external styles are the best way to do things. CSS files can be pulled in easily from HTML pages, and they
+    help ensure consistent styles across your website.
   </p>
-  
+
   <h2>Anatomy of a CSS Rule</h2>
-  
+
   <p>
-    As we mentioned earlier, styles are expressed in terms of <b>CSS rules</b>.
+    As we mentioned earlier, styles are expressed in terms of
+    <b>CSS rules</b>.
   </p>
-  
+
   <p>
     A CSS rule has two parts.
   </p>
-  
+
   <ul>
     <li>
-      The <b>selector</b>, which describes the elements to which the styles
-      will be applied. (In the rule <code>p { color: red }</code>, the
+      The
+      <b>selector</b>, which describes the elements to which the styles will be applied. (In the rule
+      <code>p { color: red }</code>, the
       <code>p</code> is the selector.)
     </li>
     <li>
-      One or more <b>properties</b>, which are the stylistic changes that will
-      be applied to elements that match the rule's selector. (In the rule
-      <code>p { color: red }</code>, <code>color: red</code> is a property.)
+      One or more
+      <b>properties</b>, which are the stylistic changes that will be applied to elements that match the rule's selector. (In
+      the rule
+      <code>p { color: red }</code>,
+      <code>color: red</code> is a property.)
     </li>
   </ul>
-  
+
   <p>
-    The properties for a rule are surrounded by curly braces. Each property is
-    composed of a name and a value, separated by a colon. Each property is
-    terminated by a semicolon.
+    The properties for a rule are surrounded by curly braces. Each property is composed of a name and a value, separated by a
+    colon. Each property is terminated by a semicolon.
   </p>
-  
+
   <h3>Selectors</h3>
-  
+
   <p>
-    There are many different types of selectors. In this class, we will show
-    only three types of selectors to keep things simple. These three types of
-    selectors will cover 85% or more of all situations you will encounter as a
-    web developer.
+    There are many different types of selectors. In this class, we will show only three types of selectors to keep things simple.
+    These three types of selectors will cover 85% or more of all situations you will encounter as a web developer.
   </p>
-  
+
   <p>
     Here are the three types of selectors we will focus on:
   </p>
-  
+
   <ul>
     <li>Tag selectors</li>
     <li>Class selectors</li>
     <li>ID selectors</li>
   </ul>
-  
+
   <h4>Tag selectors</h4>
-  
+
   <p>
-    <b>Tag selectors</b> are selectors that match elements by their tag name.
-    We saw a tag selector in a recent example: <code>p</code>. This selector
-    matches all elements that have <i>p</i> as their tag name: in other words,
-    paragraph tags.
+    <b>Tag selectors</b> are selectors that match elements by their tag name. We saw a tag selector in a recent example:
+    <code>p</code>. This selector matches all elements that have
+    <i>p</i> as their tag name: in other words, paragraph tags.
   </p>
-  
+
   <p>
-    Rules with tag selectors are useful when you want to apply styles to many
-    elements with the same HTML tag.
+    Rules with tag selectors are useful when you want to apply styles to many elements with the same HTML tag.
   </p>
-  
+
   <p>
-    In addition, you can apply styles to the <code>&lt;body&gt;</code> tag in
-    order to apply styles to the entire page. For example:
+    In addition, you can apply styles to the
+    <code>&lt;body&gt;</code> tag in order to apply styles to the entire page. For example:
   </p>
 
   <code-block language="css">
-body {
-  color: blue;  /* All text on the page will be blue */
-}
+    body { color: blue; /* All text on the page will be blue */ }
   </code-block>
-  
+
   <h4>Class selectors</h4>
-  
+
   <p>
-    <b>Class selectors</b> are selectors that match elements by class name.
-    But wait, what is a class name?
+    <b>Class selectors</b> are selectors that match elements by class name. But wait, what is a class name?
   </p>
-  
+
   <p>
-    A <b>class name</b> is just a way we can classify HTML elements.
-    We can apply a class name through the <code>class</code> attribute on any
-    HTML element. Class names can be applied to HTML elements with different
-    tag names, and we can then apply styles to all of those elements using a
-    class selector.
+    A
+    <b>class name</b> is just a way we can classify HTML elements. We can apply a class name through the
+    <code>class</code> attribute on any HTML element. Class names can be applied to HTML elements with different tag names, and we can then
+    apply styles to all of those elements using a class selector.
   </p>
-  
+
   <p>
-    We can use almost any string as a class name (as long as it doesn't have a
-    space in it). We can use hyphens to create a class name with multiple words.
+    We can use almost any string as a class name (as long as it doesn't have a space in it). We can use hyphens to create a class
+    name with multiple words.
   </p>
-  
+
   <p>
     Some example classes:
   </p>
-  
+
   <ul>
-    <li><code>red</code></li>
-    <li><code>note</code></li>
-    <li><code>important-info</code></li>
+    <li>
+      <code>red</code>
+    </li>
+    <li>
+      <code>note</code>
+    </li>
+    <li>
+      <code>important-info</code>
+    </li>
   </ul>
-  
+
   <p>
-    Classes are specified using the <code>class</code> attribute on any element:
+    Classes are specified using the
+    <code>class</code> attribute on any element:
   </p>
-  
+
   <code-block language="html">
-&lt;p class="my-class"&gt;This paragraph has class.&lt;/p&gt;
+    &lt;p class="my-class"&gt;This paragraph has class.&lt;/p&gt;
   </code-block>
-  
+
   <p>
-    Class names don't do anything by themselves. If all you do is put a class
-    attribute on every element in your HTML, nothing will look any different.
-    The real power of classes comes from using classes in CSS rules.
+    Class names don't do anything by themselves. If all you do is put a class attribute on every element in your HTML, nothing
+    will look any different. The real power of classes comes from using classes in CSS rules.
   </p>
-  
+
   <p>
     Here is an example of a CSS rule that uses a class selector:
   </p>
-  
+
   <code-block language="css">
-.red {
-  color: red;
-}
+    .red { color: red; }
   </code-block>
-  
+
   <p>
-    A class selector starts with a <code>.</code> (period), followed by the
-    name of the class you want to trigger this style rule. Any style properties
-    declared in the rule will be applied to all elements with a matching class
-    name.
+    A class selector starts with a
+    <code>.</code> (period), followed by the name of the class you want to trigger this style rule. Any style properties declared in the
+    rule will be applied to all elements with a matching class name.
   </p>
-  
+
   <p>
-    By the way, HTML elements can have more than once class name. Multiple
-    class names are separated with spaces:
+    By the way, HTML elements can have more than once class name. Multiple class names are separated with spaces:
   </p>
-  
+
   <code-block language="html">
-&lt;p class="red bold"&gt;A paragraph.&lt;/p&gt;
+    &lt;p class="red bold"&gt;A paragraph.&lt;/p&gt;
   </code-block>
-  
+
   <p>
-    When an element has multiple class names, it will be affected by rules
-    that mention only one or some of its classes. For example, a rule with a
-    <code>.red</code> selector will be applied to the paragraph above, and so
-    will a rule with a <code>.bold</code> selector. Therefore, you should use
-    multiple classes with simple style meanings ("red" and "bold" individually)
-    rather than one class with a more complex style meaning ("redbold" which
-    means both). That way, you can just use both classes, like we did above.
+    When an element has multiple class names, it will be affected by rules that mention only one or some of its classes. For
+    example, a rule with a
+    <code>.red</code> selector will be applied to the paragraph above, and so will a rule with a
+    <code>.bold</code> selector. Therefore, you should use multiple classes with simple style meanings ("red" and "bold" individually) rather
+    than one class with a more complex style meaning ("redbold" which means both). That way, you can just use both classes,
+    like we did above.
   </p>
-  
+
   <h4>ID selectors</h4>
-  
+
   <p>
-    <b>ID selectors</b> are similar to class selectors. Elements can be given an
-    ID using the <code>id</code> attribute.
+    <b>ID selectors</b> are similar to class selectors. Elements can be given an ID using the
+    <code>id</code> attribute.
   </p>
-  
+
   <p>
     There are two differences between an ID and a class name:
   </p>
-  
+
   <ul>
     <li>
       An element can only have one ID.
@@ -355,109 +307,115 @@ body {
       No two HTML elements can have the same ID on the same page.
     </li>
   </ul>
-  
+
   <p>
     Here is an example of an element with an ID:
   </p>
-  
+
   <code-block language="html">
-&lt;p id="some-id"&gt;My paragraph with an identity&lt;/p&gt;
+    &lt;p id="some-id"&gt;My paragraph with an identity&lt;/p&gt;
   </code-block>
-  
+
   <p>
     And here is an example of a style rule using an ID selector:
   </p>
-  
+
   <code-block language="css">
-#some-id {
-  color: red;
-}
+    #some-id { color: red; }
   </code-block>
-  
+
   <p>
-    An ID selector starts with a <code>#</code> (<s>hashtag</s> hash symbol),
-    followed by the name of the ID that you want to trigger this style rule.
-    Any style properties declared in the rule will be applied to the one
-    element with the ID used in the rule.
+    An ID selector starts with a
+    <code>#</code> (
+    <s>hashtag</s> hash symbol), followed by the name of the ID that you want to trigger this style rule. Any style properties
+    declared in the rule will be applied to the one element with the ID used in the rule.
   </p>
-  
+
   <h3>Properties</h3>
-  
+
   <p>
-    In a CSS rule, <b>properties</b> are how we describe the actual styles we
-    want to apply to a set of elements matched by a selector.
+    In a CSS rule,
+    <b>properties</b> are how we describe the actual styles we want to apply to a set of elements matched by a selector.
   </p>
-  
+
   <p>
-    There are a lot of properties, and sadly, we don't have time to teach
-    even one tenth of them. But we will give you three highly useful properties.
-    If you want to learn more, you can go to our Resources page and bookmark
-    the links in the <i>CSS</i> section.
+    There are a lot of properties, and sadly, we don't have time to teach even one tenth of them. But we will give you three
+    highly useful properties. If you want to learn more, you can go to our Resources page and bookmark the links in the
+    <i>CSS</i> section.
   </p>
-  
+
   <h4>Text Color</h4>
-  
+
   <p>
     You can set the text color for elements matched by a selector using the
-    <code>color</code> property, such as <code>color: red;</code>.
+    <code>color</code> property, such as
+    <code>color: red;</code>.
   </p>
-  
+
   <p>
-    There are a few ways to represent colors in CSS. Many colors can be named
-    (such as red), see the Resources page for more details.
+    There are a few ways to represent colors in CSS. Many colors can be named (such as red), see the Resources page for more
+    details.
   </p>
-  
+
   <p>
-    You can also use a <b>rgb representation</b> if you want to fine-tune your
-    colors, by representing the color using its red, green, and blue components.
-    Each component can be a value between 0 and 255. Here is an example for
-    dark gray:
+    You can also use a
+    <b>rgb representation</b> if you want to fine-tune your colors, by representing the color using its red, green, and blue
+    components. Each component can be a value between 0 and 255. Here is an example for dark gray:
   </p>
-  
+
   <code-block language="css">
-p {
-  color: rgb(64, 64, 64);
-}
+    p { color: rgb(64, 64, 64); }
   </code-block>
-  
+
   <h4>Background Color</h4>
-  
+
   <p>
-    You can set the background color for elements matched by a selector using
-    the <code>background-color</code> property, such as
-    <code>background-color: black;</code>. Background colors are represented
-    the same way as text colors.
+    You can set the background color for elements matched by a selector using the
+    <code>background-color</code> property, such as
+    <code>background-color: black;</code>. Background colors are represented the same way as text colors.
   </p>
-  
+
   <h4>Text alignment</h4>
-  
+
   <p>
-    You can set the horizontal alignment of text in elements matched by a
-    selector using the <code>text-align</code> property, such as
+    You can set the horizontal alignment of text in elements matched by a selector using the
+    <code>text-align</code> property, such as
     <code>text-align: right;</code>. For this property, you can use
-    <code>left</code>, <code>center</code>, or <code>right</code> as values.
+    <code>left</code>,
+    <code>center</code>,
+    <code>right</code>,
+    <code>justify</code> as values.
   </p>
-  
+
   <p>
     Here is an example:
   </p>
-  
+
   <code-block language="css">
-.right {
-  text-align: right;
-}
+    .right { text-align: right; }
   </code-block>
 
   <h1>Exercises</h1>
 
-  <p>(TODO: Add more exercises)</p>
-
   <ol>
     <li>
-      Wiz Khalifa has hired <i>you</i> to turn his website black and yellow.
-      Specifically, he wants his whole website to have a black background and
+      Wiz Khalifa has hired
+      <i>you</i> to turn his website black and yellow. Specifically, he wants his whole website to have a black background and
       yellow text. Write a CSS rule that would accomplish this.
     </li>
+    <li>
+      Congrats, you've been hired by a newspaper to work on their new website. The first task you've been given is to turn all
+      text on the site into full justified text alignment. Write a CSS rule that would accomplish this for an entire website.
+    </li>
+    <li>
+      The newspaper has now decided that quotes need to be left justified. Write a css rule that will assign left justification
+      to any element with a class of
+      <code>quote</code>.
+    </li>
+    <li>
+      You've been fired, but you'll make them pay! Using the
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN documentation for CSS rules</a>, write a rule that changes the font for the entire newspaper site to <code>"Comic Sans MS"</code>. <em>Note: You must include the quotes.</em>
+    </li>
   </ol>
-  
+
 </template>
