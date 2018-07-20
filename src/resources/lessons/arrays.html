@@ -20,21 +20,21 @@
   <code-block>// An empty array
 const myEmptyArray = [];</code-block>
 
-  <p>Declaring an empty array such as the example above isn’t terribly useful to us right now. We need to get
+  <p>Declaring an empty array such as the example above isn't terribly useful to us right now. We need to get
     <b>values</b> into this array. We can put data into an array one of two ways. The most common way is to <b>push</b>
     the data into the array based on some other inputs, but we will go over this later in the lesson. We can also put
     data into the array at declaration, by following the syntax below.</p>
 
   <code-block>// An array with some values
-const myFavoritesCars = [‘porsche’, ‘corvette’, ‘alfa romeo’];</code-block>
+const myFavoritesCars = ['porsche', 'corvette', 'alfa romeo'];</code-block>
 
   <p>Using the <i>console.log()</i> function, we can print out the contents of an array similar to how we did with
     variables.</p>
 
-  <code-block>// An array we’ll print out
-const myFavoriteColors = [‘blue’, ‘red’, ‘orange’, ‘black’];
+  <code-block>// An array we'll print out
+const myFavoriteColors = ['blue', 'red', 'orange', 'black'];
 
-console.log(myFavoriteColors); // Output: [“blue”, “red”, “orange”, “black”]</code-block>
+console.log(myFavoriteColors); // Output: ["blue", "red", "orange", "black"]</code-block>
 
   <p>While <i>console.log()</i> is useful for outputting the full contents of an array, in actual programs we will
     rarely do this. Normally we access array values directly by their <b>index</b> or an <b>iterator</b>.</p>
@@ -46,8 +46,8 @@ console.log(myFavoriteColors); // Output: [“blue”, “red”, “orange”, 
     important in our next lesson, but knowing it now will help you to understand <b>indexes</b> better. The example
     below shows the output of the length property for our favorite colors array.</p>
 
-  <code-block>// An array we’ll print out
-const myFavoriteColors = [‘blue’, ‘red’, ‘orange’, ‘black’];
+  <code-block>// An array we'll print out
+const myFavoriteColors = ['blue', 'red', 'orange', 'black'];
 
 console.log(myFavoriteColors.length); // Output: 4</code-block>
 
@@ -55,13 +55,13 @@ console.log(myFavoriteColors.length); // Output: 4</code-block>
     are
     <b>zero-based</b> so these index values start at 0 and end at <i>array.length - 1</i> of the array. For our favorite
     colors array
-    the <b>index</b> of 2 corresponds to “orange”, and the <b>index</b> of 0 corresponds to “blue". We can access a
+    the <b>index</b> of 2 corresponds to "orange", and the <b>index</b> of 0 corresponds to "blue". We can access a
     specific <b>element</b>
     or value of an array by using square-bracket operators at the end of the call to the array. The example below
     demonstrates this.</p>
 
   <code-block>// Let's print out these values each on a new line.
-const myFavoriteColors = [‘blue’, ‘red’, ‘orange’, ‘black’];
+const myFavoriteColors = ['blue', 'red', 'orange', 'black'];
 
 console.log(myFavoriteColors[0]); // Output: blue
 console.log(myFavoriteColors[1]); // Output: red
@@ -70,78 +70,78 @@ console.log(myFavoriteColors[3]); // Output: black
 
 console.log(myFavoriteColors[4]); // Output: undefined</code-block>
 
-  <p>Oops, we had an extra value there. JavaScript, unlike many languages, doesn’t consider accessing an <b>array
-    element</b> that doesn’t exist an error. Instead, it returns the value of undefined. This is a common source of
+  <p>Oops, we had an extra value there. JavaScript, unlike many languages, doesn't consider accessing an <b>array
+    element</b> that doesn't exist an error. Instead, it returns the value of undefined. This is a common source of
     errors, so make sure you remember to start counting from <b>zero</b>. You can also use a conditional to check if a
     value exists before you print it out.</p>
 
-  <code-block>// We’ll print out something that doesn’t exist.
-const myFavoriteColors = [‘blue’, ‘red’, ‘orange’, ‘black’];
+  <code-block>// We'll print out something that doesn't exist.
+const myFavoriteColors = ['blue', 'red', 'orange', 'black'];
 
 const myColor = myFavoriteColors[4];
 
 if (myColor) {
   console.log(myColor);
 } else {
-  console.log(‘myColor doesn’t exist!’);
+  console.log('myColor doesn't exist!');
 }
 
-// Output: myColor doesn’t exist!</code-block>
+// Output: myColor doesn't exist!</code-block>
 
   <h2>Manipulating an Array</h2>
 
   <p>JavaScript provides us with several methods to <b>manipulate</b> arrays. While there are close to 30 different
-    actions we can take on an array, but for today we’ll look at a few of the most important methods.</p>
+    actions we can take on an array, but for today we'll look at a few of the most important methods.</p>
 
   <p>Arguably the most important is the ability to add or remove to the end of an array. We call these actions
     <b>push</b> and <b>pop</b>. When we <b>push</b> to an array, we add an <b>element</b> to the end of the array that
     contains our value. We can also <b>pop</b> off the <b>last element</b> of an array. The example below demonstrates
     how this works.</p>
 
-  <code-block>// We’ll make an array to track things we need to do.
-const thingsToDo = [‘sleep’, ‘call parents’];
+  <code-block>// We'll make an array to track things we need to do.
+const thingsToDo = ['sleep', 'call parents'];
 
-console.log(thingsToDo); // Output: [“sleep”, “call parents”]
+console.log(thingsToDo); // Output: ["sleep", "call parents"]
 
 // When we need to add something, we can use push.
-thingsToDo.push(‘make memes’);
+thingsToDo.push('make memes');
 
-console.log(thingsToDo); // Output: [“sleep”, “call parents”, “make memes”]
+console.log(thingsToDo); // Output: ["sleep", "call parents", "make memes"]
 
 // When we complete the last action on our list, we can pop it off into a variable.
 const justDid = thingsToDo.pop();
 
 console.log(`I just did ${justDid}`); // Output: I just did make memes
-console.log(thingsToDo); // Output: [“sleep”, “call parents”]</code-block>
+console.log(thingsToDo); // Output: ["sleep", "call parents"]</code-block>
 
-  <p>With our example, what if we wanted to complete the “call parents” action? In order to remove that from our list
-    we’d need to do “make memes” first with the tools we currently have. However, there is another method called <b>splice</b>
+  <p>With our example, what if we wanted to complete the "call parents" action? In order to remove that from our list
+    we'd need to do "make memes" first with the tools we currently have. However, there is another method called <b>splice</b>
     that allows us to add or remove specific elements.</p>
 
-  <code-block>// This time we’ll finish the call parents action. We have all 3 tasks already in the array.
-const thingsToDo = [‘sleep’, ‘call parents’, ‘make memes’];
+  <code-block>// This time we'll finish the call parents action. We have all 3 tasks already in the array.
+const thingsToDo = ['sleep', 'call parents', 'make memes'];
 
-console.log(thingsToDo); // Output: [“sleep”, “call parents”, “make memes”];
+console.log(thingsToDo); // Output: ["sleep", "call parents", "make memes"];
 
-// We’ve just called our parents, lets remove that value. Remember arrays are zero-based!
+// We've just called our parents, lets remove that value. Remember arrays are zero-based!
 thingsToDo.splice(1, 1); // This means starting at element 1 (the second element), we want to remove 1 element.
 
-console.log(thingsToDo); // Output: [“sleep”, “make memes”];
+console.log(thingsToDo); // Output: ["sleep", "make memes"];
 
-// We can also add two tasks to the middle of our array using splice. Lets add “brush dog” and “walk cat”.
-thingsToDo.splice(1, 0, ‘brush dog’, ‘walk cat’);
+// We can also add two tasks to the middle of our array using splice. Lets add "brush dog" and "walk cat".
+thingsToDo.splice(1, 0, 'brush dog', 'walk cat');
 
-console.log(thingsToDo); // Output: [“sleep”, “brush dog”, “walk cat”, “make memes”]</code-block>
+console.log(thingsToDo); // Output: ["sleep", "brush dog", "walk cat", "make memes"]</code-block>
 
-  <p>Often, when we write the program we don’t know where a specific value will be in an array. We can find the
+  <p>Often, when we write the program we don't know where a specific value will be in an array. We can find the
     <b>index</b> of the element we want to remove using the <b>indexOf</b> method.</p>
 
-  <code-block>// Lets find the index of the ‘call parents’ task. Store it in a variable, and then remove it using splice.
-const thingsToDo = [‘sleep’, ‘call parents’, ‘make memes’];
+  <code-block>// Lets find the index of the 'call parents' task. Store it in a variable, and then remove it using splice.
+const thingsToDo = ['sleep', 'call parents', 'make memes'];
 
-console.log(thingsToDo); // Output: [“sleep”, “call parents”, “make memes”];
+console.log(thingsToDo); // Output: ["sleep", "call parents", "make memes"];
 
-const taskIndex = thingsToDo.indexOf(‘call parents’);
+const taskIndex = thingsToDo.indexOf('call parents');
 const justRemoved = thingsToDo.splice(taskIndex, 1); // We can store the removed value in an array, like with pop.
 
 console.log(`I just removed ${justRemoved}`); // Output: I just removed call parents
@@ -149,7 +149,7 @@ console.log(thingsToDo);
   </code-block>
 
   <p>There are many other actions that we can take against our arrays, some of which we will go over in the next lesson.
-    However, the ones we’ve reviewed here are the most common actions you’ll take. Try the exercises to sharpen your
+    However, the ones we've reviewed here are the most common actions you'll take. Try the exercises to sharpen your
     skills with arrays.</p>
 
   <h1>Exercises</h1>
@@ -157,13 +157,13 @@ console.log(thingsToDo);
   <p>Put all of these exercises in a single file.</p>
 
   <ol>
-    <li>Declare an array called “myFavoriteFoods” with 3 or more of your favorite foods, then print the result out to
+    <li>Declare an array called "myFavoriteFoods" with 3 or more of your favorite foods, then print the result out to
       the console.
     </li>
-    <li>Use the pop function to remove one of your favorite foods, storing the value in a variable called “foodItem”.
+    <li>Use the pop function to remove one of your favorite foods, storing the value in a variable called "foodItem".
       Print out the array.
     </li>
-    <li>Now, using the push function and your “foodItem” variable, add it back to your array. Print out the array.</li>
+    <li>Now, using the push function and your "foodItem" variable, add it back to your array. Print out the array.</li>
     <li>Print out the 3rd item in your array to the console.</li>
     <li>Using splice, remove the second item in your array, and print the array to the console.</li>
   </ol>
